@@ -19,7 +19,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "162cc1afbbf6a927074a50470b89322a14d45bf2"
+      "hash": "c0b2d13f37697c17be699cf21dfb3f7b99e1cc2e"
     },
     "com.jmayberry.customattributes": {
       "version": "git@github.com:JoshMayberry/CustomAttributes.git",
@@ -27,13 +27,6 @@
       "source": "git",
       "dependencies": {},
       "hash": "1ee8beb27cb2d67a698a8aefdc4eff1bd05274c5"
-    },
-    "com.jmayberry.gambitsystem": {
-      "version": "git@github.com:JoshMayberry/GambitSystem.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "e680f0690a3da58020e4c53043c6d091e97c8cac"
     },
     "com.jmayberry.generalinfrastructure": {
       "version": "git@github.com:JoshMayberry/GeneralInfrastructure.git",
@@ -64,17 +57,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "2b383ac76f7fe84efb4b0cb5158e878679ef981f"
-    },
-    "com.jmayberry.typewriterhelper": {
-      "version": "git@github.com:JoshMayberry/TypewriterHelper.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.aarthificial.typewriter": "1.2.0",
-        "com.unity.textmeshpro": "3.0.6"
-      },
-      "hash": "4bd95648f4fb0d2b2d1868ad5da6708096b58ecf"
+      "hash": "3c8c31a3d665e74fb4f0605e5237cb38a9b433c7"
     },
     "com.unity.2d.animation": {
       "version": "10.0.2",
