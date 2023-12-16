@@ -13,4 +13,29 @@ MonoBehaviour:
   m_Name: Initial
   m_EditorClassIdentifier: 
   title: 
-  cardList: []
+  whenDrawEmpty: 0
+  cardList:
+  - {fileID: 11400000, guid: 228fe158003049347833b8e9fb87649e, type: 2}
+  - {fileID: 11400000, guid: 40f35fa61ec6470468ab39a589ac2f74, type: 2}
+  - {fileID: 11400000, guid: 40f35fa61ec6470468ab39a589ac2f74, type: 2}
+  - {fileID: 11400000, guid: 40f35fa61ec6470468ab39a589ac2f74, type: 2}
+  - {fileID: 11400000, guid: 941a2e8ed2bc9c14bb02f16bfea770b4, type: 2}
+  - {fileID: 11400000, guid: 941a2e8ed2bc9c14bb02f16bfea770b4, type: 2}
+  - {fileID: 11400000, guid: 941a2e8ed2bc9c14bb02f16bfea770b4, type: 2}
+  - {fileID: 11400000, guid: 941a2e8ed2bc9c14bb02f16bfea770b4, type: 2}
+  - {fileID: 11400000, guid: 0e0b50096b697a747adb8adbe92e70d2, type: 2}
+  onCardUse:
+    m_PersistentCalls:
+      m_Calls: []
+  onCardDraw:
+    m_PersistentCalls:
+      m_Calls: []
+  onCardDiscard:
+    m_PersistentCalls:
+      m_Calls: []
+  onCardHand:
+    m_PersistentCalls:
+      m_Calls: []
+  onCardDestroy:
+    m_PersistentCalls:
+      m_Calls: []

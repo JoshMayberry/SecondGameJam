@@ -18,7 +18,7 @@ public enum RoomSomething {
 }
 
 [CreateAssetMenu(fileName = "NewRoom", menuName = "Dungeon/Room")]
-public class RoomCard : Card<RoomType, RoomSomething> {
+public class RoomCardData : CardData<RoomType, RoomSomething> {
     [SerializeField] public RoomType type;
     [SerializeField] public Room roomPrefab;
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DebugManager : MonoBehaviour {
-	public RoomCard testRoom;
+	public RoomCardData testRoomData;
 
 	public static DebugManager instance { get; private set; }
 	private void Awake() {
@@ -15,10 +15,10 @@ public class DebugManager : MonoBehaviour {
 	}
 
 	public void OnTestSpawnRoom() {
-		RoomManager.instance.SpawnRoom(testRoom, this.transform.position);
+		RoomManager.instance.SpawnRoom(this.testRoomData, this.transform.position);
 	}
 
 	public void OnTestSpawnCard() {
-		
+		//RoomCardManager.instance.
 	}
 }

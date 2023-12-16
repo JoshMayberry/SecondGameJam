@@ -6,13 +6,13 @@ using jmayberry.Spawner;
 using jmayberry.CustomAttributes;
 
 public class Room : MonoBehaviour, ISpawnable {
-	[Readonly] public RoomCard card;
+	[Readonly] public RoomCardData cardData;
 
 	public void OnDespawn(object spawner) {}
 
 	public void OnSpawn(object spawner) {}
 
-	public void setCard(RoomCard card) {
-		this.card = card;
+	public void setCardData(RoomCardData cardData) {
+		this.cardData = cardData;
     }
 }

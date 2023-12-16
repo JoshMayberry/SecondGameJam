@@ -4,4 +4,4 @@ using UnityEngine;
 
 using jmayberry.CardDeck;
 
-public class UiTowerCard : UiCard<RoomType, RoomSomething> { }
+public class UiTowerCard : Card<RoomType, RoomSomething> { }

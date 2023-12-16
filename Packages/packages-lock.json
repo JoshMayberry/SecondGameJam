@@ -19,7 +19,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "c0b2d13f37697c17be699cf21dfb3f7b99e1cc2e"
+      "hash": "2df40f6b26c35abd9256dafa9c247fcbda7bd5f8"
     },
     "com.jmayberry.customattributes": {
       "version": "git@github.com:JoshMayberry/CustomAttributes.git",
@@ -57,7 +57,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "3c8c31a3d665e74fb4f0605e5237cb38a9b433c7"
+      "hash": "de0efb6df5b7be541add0d7fb470215890c7645b"
     },
     "com.unity.2d.animation": {
       "version": "10.0.2",

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using jmayberry.CustomAttributes;
@@ -25,8 +23,8 @@ public class RoomManager : MonoBehaviour {
 		instance = this;
 	}
 
-	public void SpawnRoom(RoomCard roomData, Vector2 position) {
+	public void SpawnRoom(RoomCardData roomData, Vector2 position) {
 		Room room = this.roomSpawner.Spawn(position, this.transform);
-		room.setCard(roomData);
+		room.setCardData(roomData);
 	}
 }
