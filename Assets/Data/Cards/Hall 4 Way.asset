@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: 4 Way Hall
   description: Get from point A to B, C, or D!
-  rarity: 0
+  rarity: 2
   holo: 0
   afterUse: 0
   cost: 2

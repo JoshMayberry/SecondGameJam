@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: T Hall
   description: Get from point A to point B... And C!
-  rarity: 0
+  rarity: 1
   holo: 0
   afterUse: 0
   cost: 2

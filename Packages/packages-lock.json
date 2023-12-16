@@ -19,7 +19,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "2df40f6b26c35abd9256dafa9c247fcbda7bd5f8"
+      "hash": "aba1fb662d3bef63957c47eebb031392e9a70409"
     },
     "com.jmayberry.customattributes": {
       "version": "git@github.com:JoshMayberry/CustomAttributes.git",
@@ -38,26 +38,12 @@
       },
       "hash": "e9e9f34e9ec000939c2654664452d50e6567282e"
     },
-    "com.jmayberry.playerphysics2d": {
-      "version": "git@github.com:JoshMayberry/PlayerPhysics2D.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "0362de5ba8b9269a3e4343410386479797521449"
-    },
-    "com.jmayberry.shop": {
-      "version": "git@github.com:JoshMayberry/ShopSystem.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "3f5bc731b15dbee716d833fa3eadcbc877feeab2"
-    },
     "com.jmayberry.spawner": {
       "version": "git@github.com:JoshMayberry/Spawner.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "de0efb6df5b7be541add0d7fb470215890c7645b"
+      "hash": "a11fe63cd1e584c1045921fb4e40643b5f03641f"
     },
     "com.unity.2d.animation": {
       "version": "10.0.2",

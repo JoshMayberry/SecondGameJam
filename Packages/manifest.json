@@ -5,8 +5,6 @@
     "com.jmayberry.carddeck": "git@github.com:JoshMayberry/CardDeck.git",
     "com.jmayberry.customattributes": "git@github.com:JoshMayberry/CustomAttributes.git",
     "com.jmayberry.generalinfrastructure": "git@github.com:JoshMayberry/GeneralInfrastructure.git",
-    "com.jmayberry.playerphysics2d": "git@github.com:JoshMayberry/PlayerPhysics2D.git",
-    "com.jmayberry.shop": "git@github.com:JoshMayberry/ShopSystem.git",
     "com.jmayberry.spawner": "git@github.com:JoshMayberry/Spawner.git",
     "com.unity.collab-proxy": "2.0.5",
     "com.unity.feature.2d": "2.0.0",
