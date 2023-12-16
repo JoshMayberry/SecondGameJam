@@ -49,7 +49,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e86c810a575e3b498e6a21170700fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  cardData: {fileID: 0}
+  isBlueprint: 1
+  connectSpots:
+  - {fileID: 4160347890612040823}
+  - {fileID: 2180826258274771283}
+  - {fileID: 6019826348270597162}
+  buildSpots:
+  - {fileID: 1949748470967882390}
+  enterHere: {fileID: 0}
 --- !u!1 &5044951875151788234
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3149134669117440163}
   - component: {fileID: 4875215113591175840}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hall_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,8 +128,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 477814459
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -32532236029383594, guid: 197f9b03018ba9747b3560e7213946c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -142,6 +150,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 124456538566776806}
     m_Modifications:
+    - target: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.23
@@ -184,7 +196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5584390622706841139, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_Name
-      value: ConnectSpot (1)
+      value: ConnectSpot E
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -196,6 +208,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}
   m_PrefabInstance: {fileID: 11897053435346872}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4160347890612040823 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+  m_PrefabInstance: {fileID: 11897053435346872}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2301b50d9b34aa343b900175d919b5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &183074733278041497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -204,6 +227,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 124456538566776806}
     m_Modifications:
+    - target: {fileID: 1838749134635779855, guid: 7bb33c794e257814ba3c8034082b7621, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3933074736033371838, guid: 7bb33c794e257814ba3c8034082b7621, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.05
@@ -246,13 +273,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5584390622706841139, guid: 7bb33c794e257814ba3c8034082b7621, type: 3}
       propertyPath: m_Name
-      value: BuildSpot
+      value: BuildSpot N
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bb33c794e257814ba3c8034082b7621, type: 3}
+--- !u!114 &1949748470967882390 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1838749134635779855, guid: 7bb33c794e257814ba3c8034082b7621, type: 3}
+  m_PrefabInstance: {fileID: 183074733278041497}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0288cb5c3f7f76248a4e2512d8d29fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3755861204236895015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3933074736033371838, guid: 7bb33c794e257814ba3c8034082b7621, type: 3}
@@ -266,6 +304,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 124456538566776806}
     m_Modifications:
+    - target: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+      propertyPath: type
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.022
@@ -308,7 +350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5584390622706841139, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_Name
-      value: ConnectSpot (2)
+      value: ConnectSpot S
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -320,6 +362,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}
   m_PrefabInstance: {fileID: 2870231118531340956}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2180826258274771283 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+  m_PrefabInstance: {fileID: 2870231118531340956}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2301b50d9b34aa343b900175d919b5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7646120652334596069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,6 +381,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 124456538566776806}
     m_Modifications:
+    - target: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+      propertyPath: type
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.25
@@ -370,13 +427,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5584390622706841139, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_Name
-      value: ConnectSpot (3)
+      value: ConnectSpot W
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+--- !u!114 &6019826348270597162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+  m_PrefabInstance: {fileID: 7646120652334596069}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2301b50d9b34aa343b900175d919b5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6667980134739044699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}

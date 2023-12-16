@@ -11,6 +11,7 @@ public enum RoomType {
     Entrance,
     Boss,
     Hallway,
+    Monster,
 }
 
 public enum RoomSomething {

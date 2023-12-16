@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3933074736033371838}
-  - component: {fileID: 1838749134635779855}
+  - component: {fileID: -5073654540472235057}
   - component: {fileID: 3395419752816426127}
-  - component: {fileID: 3103079825141232137}
-  m_Layer: 0
+  - component: {fileID: 676329478455873204}
+  m_Layer: 8
   m_Name: ConnectSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,13 +28,13 @@ Transform:
   m_GameObject: {fileID: 5584390622706841139}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.7327523, y: 0.017500712, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1838749134635779855
+--- !u!114 &-5073654540472235057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +43,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5584390622706841139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0288cb5c3f7f76248a4e2512d8d29fa2, type: 3}
+  m_Script: {fileID: 11500000, guid: 2301b50d9b34aa343b900175d919b5d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &3395419752816426127
@@ -84,8 +84,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 113269717
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -9130343077930108678, guid: c5c051e1e7be74846b8cb6b976c079dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
@@ -98,7 +98,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3103079825141232137
+--- !u!58 &676329478455873204
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,4 +133,4 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.28

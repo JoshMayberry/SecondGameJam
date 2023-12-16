@@ -12,9 +12,9 @@ TagManager:
   - Water
   - UI
   - Cards in Hand
-  - 
-  - 
-  - 
+  - Room
+  - Connect Spot
+  - Build Spot
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Room
+    uniqueID: 477814459
+    locked: 0
+  - name: Interaction Spot
+    uniqueID: 113269717
     locked: 0

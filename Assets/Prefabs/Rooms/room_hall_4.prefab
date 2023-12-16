@@ -49,7 +49,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e86c810a575e3b498e6a21170700fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  cardData: {fileID: 0}
+  connectSpots:
+  - {fileID: 5005127301699397828}
+  - {fileID: 9102306649929672664}
+  - {fileID: 7004131458824567145}
+  - {fileID: 6456474144762589564}
+  buildSpots: []
+  enterHere: {fileID: 0}
 --- !u!1 &4720430435280002712
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4524822982832236439}
   - component: {fileID: 2742104686700718328}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hall_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,8 +127,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 477814459
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 4107754553830170082, guid: 7cca16a3f6612ff4d874c05b8527139e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -142,6 +149,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9069675124811193875}
     m_Modifications:
+    - target: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.23
@@ -184,7 +195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5584390622706841139, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_Name
-      value: ConnectSpot (1)
+      value: ConnectSpot E
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -196,6 +207,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}
   m_PrefabInstance: {fileID: 5172139804026022935}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9102306649929672664 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+  m_PrefabInstance: {fileID: 5172139804026022935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2301b50d9b34aa343b900175d919b5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6387633006726263462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -204,6 +226,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9069675124811193875}
     m_Modifications:
+    - target: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+      propertyPath: type
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.022
@@ -246,13 +272,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5584390622706841139, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_Name
-      value: ConnectSpot (2)
+      value: ConnectSpot S
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+--- !u!114 &7004131458824567145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+  m_PrefabInstance: {fileID: 6387633006726263462}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2301b50d9b34aa343b900175d919b5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7939978918565487640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}
@@ -266,6 +303,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9069675124811193875}
     m_Modifications:
+    - target: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+      propertyPath: type
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.25
@@ -308,7 +349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5584390622706841139, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_Name
-      value: ConnectSpot (3)
+      value: ConnectSpot W
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -320,6 +361,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}
   m_PrefabInstance: {fileID: 6921121224303819443}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6456474144762589564 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+  m_PrefabInstance: {fileID: 6921121224303819443}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2301b50d9b34aa343b900175d919b5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8999048371360244491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,6 +380,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9069675124811193875}
     m_Modifications:
+    - target: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.003
@@ -370,13 +426,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5584390622706841139, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_Name
-      value: ConnectSpot
+      value: ConnectSpot N
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+--- !u!114 &5005127301699397828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5073654540472235057, guid: b15fb125abd163545ae72d02f5355025, type: 3}
+  m_PrefabInstance: {fileID: 8999048371360244491}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2301b50d9b34aa343b900175d919b5d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5365507285351740853 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3933074736033371838, guid: b15fb125abd163545ae72d02f5355025, type: 3}

@@ -9,6 +9,8 @@ public class RoomCardManager : CardManager<RoomType, RoomSomething> {
     [Required] public GameObject drawBackup;
     [Required] public GameObject discardBackup;
 
+    [Readonly] public UiTowerCard selectedCard;
+
     public static RoomCardManager instanceApplied { get; private set; }
     public override void Awake() {
         base.Awake();
@@ -30,5 +32,4 @@ public class RoomCardManager : CardManager<RoomType, RoomSomething> {
         // Temp: Start game right away
         this.OnNewGame();
     }
-
 }
