@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using jmayberry.CardDeck;
+using AYellowpaper.SerializedCollections;
 
 public enum CardType {
     NormalRoom,
@@ -25,4 +26,5 @@ public class RoomCardData : CardData<CardType, CardSideEffect> {
     [SerializeField] public CardSideEffect effectType;
     [SerializeField] public CardType cardType;
     [SerializeField] public Buildable blueprint;
+	[SerializedDictionary("Hero Type", "Amount")] public SerializedDictionary<HeroType, int> heroInterest;
 }

@@ -7,10 +7,10 @@ using jmayberry.CustomAttributes;
 // TODO: Split construction functions and Buildable functions into separate files? Prefabs would need both...
 
 public class Buildable : MonoBehaviour, ISpawnable {
-	[SerializeField] private List<Spot> connectSpotList = new List<Spot>();
+	[SerializeField] public List<Spot> connectSpotList = new List<Spot>();
 
 	[Readonly] public RoomCard card;
-	[Readonly] public RoomCardData cardData;
+	 public RoomCardData cardData;
     [Readonly] private int connectSpotIndex;
     [Readonly] public bool isBlueprint = true;
     [Readonly] public Spot targetConnection;
@@ -103,14 +103,23 @@ public class Buildable : MonoBehaviour, ISpawnable {
 		this.UnloadBlueprint();
     }
 
+	public virtual bool IsPlacementAcceptable() {
+        if (this.isBlueprint) {
+            Debug.LogWarning("Do not work on the blueprint; work on a construction.");
+            return false;
+        }
+
+        return true;
+    }
+
 	public virtual void OnDespawn(object spawner) { }
 
 	public virtual void OnSpawn(object spawner) { }
 
-	public virtual void ShowBlueprint(Spot targetConnection) {
+	public virtual bool ShowBlueprint(Spot targetConnection) {
         if (!this.isBlueprint) {
             Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
-            return;
+            return false;
         }
 
         this.targetConnection = targetConnection;
@@ -135,6 +144,8 @@ public class Buildable : MonoBehaviour, ISpawnable {
 
         // Line up position
         this.constructed.transform.position += this.targetConnection.GetPosition() - this.blueprintConnection.GetPosition();
+
+        return this.constructed.IsPlacementAcceptable();
     }
 
 	public virtual void UnloadBlueprint() {

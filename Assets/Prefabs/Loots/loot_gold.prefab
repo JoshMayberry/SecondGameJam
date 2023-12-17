@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2023684224159878704}
   - component: {fileID: 1505695546709532906}
+  - component: {fileID: 3422094270026224517}
   m_Layer: 0
   m_Name: loot_gold
-  m_TagString: Untagged
+  m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,11 +50,47 @@ MonoBehaviour:
   connectSpotList:
   - {fileID: 7412854465495942336}
   card: {fileID: 0}
-  cardData: {fileID: 0}
+  cardData: {fileID: 11400000, guid: cc4432086fa27bf44aab90bba0a48554, type: 2}
   isBlueprint: 1
   targetConnection: {fileID: 0}
   blueprintConnection: {fileID: 0}
   constructed: {fileID: 0}
+--- !u!58 &3422094270026224517
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7827872710951473674}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.06}
+  m_Radius: 0.09
 --- !u!1001 &5212074540795279706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109,6 +146,10 @@ PrefabInstance:
     - target: {fileID: 5584390622706841139, guid: e5b2cd73817f53543b93574b0456b969, type: 3}
       propertyPath: m_Name
       value: LootSpot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584390622706841139, guid: e5b2cd73817f53543b93574b0456b969, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

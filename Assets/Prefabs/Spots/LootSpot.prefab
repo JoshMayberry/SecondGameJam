@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 676329478455873204}
   m_Layer: 10
   m_Name: LootSpot
-  m_TagString: Untagged
+  m_TagString: BuildSpot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f75b8a3c0f0664382d98f11a47e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  room: {fileID: 0}
+  container: {fileID: 0}
   isUsed: 0
   type: 0
 --- !u!212 &3395419752816426127

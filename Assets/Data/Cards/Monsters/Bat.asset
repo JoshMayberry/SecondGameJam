@@ -23,5 +23,14 @@ MonoBehaviour:
   constructMode: 2
   effectType: 0
   cardType: 4
-  constructionPrefab: {fileID: 5753373098274808340, guid: 184ac3f4652435d48b085170e2c5e61e, type: 3}
-  canRotate: 0
+  blueprint: {fileID: 588799784305975897, guid: 184ac3f4652435d48b085170e2c5e61e, type: 3}
+  heroInterest:
+    _serializedList:
+    - Key: 1
+      Value: 3
+    - Key: 2
+      Value: 3
+    - Key: 3
+      Value: 1
+    - Key: 4
+      Value: 5

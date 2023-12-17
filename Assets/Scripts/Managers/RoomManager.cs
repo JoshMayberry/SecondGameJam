@@ -1,7 +1,8 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using jmayberry.CustomAttributes;
-using UnityEngine.UI;
 using jmayberry.CardDeck;
 
 public enum ConstructMode {
@@ -15,7 +16,9 @@ public enum ConstructMode {
 // TODO: Rename to 'BuildManager'
 public class RoomManager : MonoBehaviour {
 	[Required] public Room roomEnterance;
-	[Required] public Button construction_uiBuild;
+	[Required] public Transform heroSpawnPoint;
+	[Required] public Transform roomEnterancePoint;
+    [Required] public Button construction_uiBuild;
 	[Required] public Button construction_uiCancel;
 	[Required] public Button construction_uiRotateClockwise;
 	[Required] public Button construction_uiRotateCounterClockwise;
@@ -26,10 +29,16 @@ public class RoomManager : MonoBehaviour {
 
 	[Readonly] public ConstructMode currentConstructMode;
 	[Readonly] public int rotationIndex;
-    [Readonly] public Buildable currentBlueprint;
-    [Readonly] public Spot currentTargetConnection;
+	[Readonly] public Buildable currentBlueprint;
+	[Readonly] public Spot currentTargetConnection;
+    //[SerializedDictionary("Construction Type", "Amount")] public SerializedDictionary<ConstructMode, List<Buildable>> heroInterest = new SerializedDictionary<ConstructMode, List<Buildable>>();
 
-	public static RoomManager instance { get; private set; }
+    [Readonly] public List<Room> builtRoomList = new List<Room>();
+    [Readonly] public List<Monster> builtMonsterList = new List<Monster>();
+    [Readonly] public List<Loot> builtLootList = new List<Loot>();
+
+
+    public static RoomManager instance { get; private set; }
 	public void Awake() {
 		if (instance != null) {
 			Debug.LogError("Found more than one RoomManager in the scene.");
@@ -71,7 +80,7 @@ public class RoomManager : MonoBehaviour {
 			this.RemoveBlueprint();
 		}
 
-        this.construction_uiCancel.interactable = true;
+		this.construction_uiCancel.interactable = true;
 		this.construction_uiBuild.interactable = false;
 		this.construction_uiRotateClockwise.interactable = false;
 		this.construction_uiRotateCounterClockwise.interactable = false;
@@ -93,16 +102,30 @@ public class RoomManager : MonoBehaviour {
 	}
 
 	public void OnBlueprint_RotateCounterClockwise() {
-        this.currentBlueprint.UsePreviousSpot();
-        this.UpdateBlueprint();
-    }
+		this.currentBlueprint.UsePreviousSpot();
+		this.UpdateBlueprint();
+	}
 
 	public void OnBlueprint_Build() {
+		switch (this.currentConstructMode) {
+			case ConstructMode.Room:
+				this.builtRoomList.Add((Room)this.currentBlueprint.constructed);
+				break;
+
+            case ConstructMode.Monster:
+                this.builtMonsterList.Add((Monster)this.currentBlueprint.constructed);
+                break;
+
+            case ConstructMode.Loot:
+                this.builtLootList.Add((Loot)this.currentBlueprint.constructed);
+                break;
+        }
+
         this.currentBlueprint.BuildBlueprint();
 		this.currentBlueprint = null;
-        this.currentTargetConnection = null;
+		this.currentTargetConnection = null;
 
-        RoomCardManager.instanceApplied.selectedCard.PlayCard();
+		RoomCardManager.instanceApplied.selectedCard.PlayCard();
 	}
 
 	public void OnBlueprint_Cancel() {
@@ -131,7 +154,7 @@ public class RoomManager : MonoBehaviour {
 
 		this.RemoveBlueprint();
 
-        var cardData = (RoomCardData)card.card;
+		var cardData = (RoomCardData)card.card;
 		this.currentBlueprint = cardData.blueprint;
 		this.currentBlueprint.SetCard(card, cardData);
 
@@ -139,27 +162,26 @@ public class RoomManager : MonoBehaviour {
 	}
 
 	public void UpdateBlueprint() {
-        if (this.currentTargetConnection == null) {
-            return;
-        }
+		if (this.currentTargetConnection == null) {
+			return;
+		}
 
-        if (this.currentBlueprint == null) {
+		if (this.currentBlueprint == null) {
 			Debug.LogWarning("No blueprint to update");
 			return;
 		}
 
-        bool canRotate = this.currentBlueprint.HasMultipleSpots();
-        this.construction_uiRotateClockwise.interactable = canRotate;
-        this.construction_uiRotateCounterClockwise.interactable = canRotate;
+		bool canRotate = this.currentBlueprint.HasMultipleSpots();
+		this.construction_uiRotateClockwise.interactable = canRotate;
+		this.construction_uiRotateCounterClockwise.interactable = canRotate;
 
-        this.construction_uiBuild.interactable = true;
-        this.currentBlueprint.ShowBlueprint(this.currentTargetConnection);
-    }
+		this.construction_uiBuild.interactable = this.currentBlueprint.ShowBlueprint(this.currentTargetConnection);
+	}
 
 	public void RemoveBlueprint() {
-        if (this.currentBlueprint != null) {
+		if (this.currentBlueprint != null) {
 			this.currentBlueprint.UnloadBlueprint();
 			this.currentBlueprint = null;
-        }
-    }
+		}
+	}
 }

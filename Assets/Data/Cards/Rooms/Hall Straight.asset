@@ -23,5 +23,4 @@ MonoBehaviour:
   constructMode: 1
   effectType: 0
   cardType: 3
-  constructionPrefab: {fileID: 2908734846153361915, guid: 2768b34f4d7469d4c9bf43515809a854, type: 3}
-  canRotate: 0
+  blueprint: {fileID: -2148965914576281019, guid: 2768b34f4d7469d4c9bf43515809a854, type: 3}

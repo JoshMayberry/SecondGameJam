@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BuildSpot
+  - Room
+  - Monster
+  - Loot
+  - GameBoundary
+  - Hero
   layers:
   - Default
   - TransparentFX
@@ -16,7 +22,7 @@ TagManager:
   - Connect Spot
   - Monster Spot
   - Loot Spot
-  - 
+  - Hero
   - 
   - 
   - 
