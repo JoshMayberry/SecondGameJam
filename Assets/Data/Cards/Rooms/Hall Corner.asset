@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43d984c085d0d249b050953739c16a6, type: 3}
+  m_Name: Hall Corner
+  m_EditorClassIdentifier: 
+  title: Corner Hall
+  description: Get from point A to point B!
+  rarity: 0
+  holo: 0
+  afterUse: 0
+  cost: 1
+  artwork: {fileID: -6003594548577529567, guid: dcdb19121c6226247a2aeef0c7e72750, type: 3}
+  actionList: []
+  constructMode: 1
+  effectType: 0
+  cardType: 3
+  constructionPrefab: {fileID: 4906349995920959235, guid: 89169426eadc5e04eb426379b2ce69f2, type: 3}
+  canRotate: 1

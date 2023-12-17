@@ -5,11 +5,11 @@ using UnityEngine;
 using jmayberry.CardDeck;
 using jmayberry.CustomAttributes;
 
-public class RoomCardManager : CardManager<RoomType, RoomSomething> {
+public class RoomCardManager : CardManager<CardType, CardSideEffect> {
     [Required] public GameObject drawBackup;
     [Required] public GameObject discardBackup;
 
-    [Readonly] public UiTowerCard selectedCard;
+    [Readonly] public RoomCard selectedCard;
 
     public static RoomCardManager instanceApplied { get; private set; }
     public override void Awake() {

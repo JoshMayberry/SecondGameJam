@@ -19,7 +19,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "583f2d23c3c17090969deea46393a02f46bbafae"
+      "hash": "edc096e12eae64fe1a021440b6b21440cc635501"
     },
     "com.jmayberry.customattributes": {
       "version": "git@github.com:JoshMayberry/CustomAttributes.git",

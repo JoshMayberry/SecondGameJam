@@ -2082,6 +2082,10 @@ MonoBehaviour:
       Value: {fileID: 4285030085138947076, guid: dcdb19121c6226247a2aeef0c7e72750, type: 3}
     - Key: 1
       Value: {fileID: -3958830845363654458, guid: dcdb19121c6226247a2aeef0c7e72750, type: 3}
+    - Key: 6
+      Value: {fileID: -2927890616106856449, guid: dcdb19121c6226247a2aeef0c7e72750, type: 3}
+    - Key: 7
+      Value: {fileID: -3958830845363654458, guid: dcdb19121c6226247a2aeef0c7e72750, type: 3}
     - Key: 2
       Value: {fileID: -2927890616106856449, guid: dcdb19121c6226247a2aeef0c7e72750, type: 3}
     - Key: 5
@@ -2442,10 +2446,10 @@ MonoBehaviour:
   construction_uiCancel: {fileID: 1140668127}
   construction_uiRotateClockwise: {fileID: 68500513}
   construction_uiRotateCounterClockwise: {fileID: 651516987}
-  canConstruct: 0
-  connectionIndex: 0
-  blueprintRoom: {fileID: 0}
-  targetConnection: {fileID: 0}
+  currentConstructMode: 0
+  rotationIndex: 0
+  currentBlueprint: {fileID: 0}
+  currentTargetConnection: {fileID: 0}
 --- !u!4 &1037027875
 Transform:
   m_ObjectHideFlags: 0

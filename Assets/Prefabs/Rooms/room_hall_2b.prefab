@@ -133,14 +133,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e86c810a575e3b498e6a21170700fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 0}
-  isBlueprint: 1
-  connectSpots:
+  connectSpotList:
   - {fileID: 8009243379633527948}
   - {fileID: 4257316816312935105}
-  buildSpots:
-  - {fileID: 1772386733589366561}
-  - {fileID: 7296568765209951970}
+  card: {fileID: 0}
+  cardData: {fileID: 0}
+  isBlueprint: 1
+  targetConnection: {fileID: 0}
+  blueprintConnection: {fileID: 0}
+  constructed: {fileID: 0}
   enterHere: {fileID: 0}
 --- !u!1001 &80014551200841774
 PrefabInstance:
@@ -203,17 +204,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bb33c794e257814ba3c8034082b7621, type: 3}
---- !u!114 &1772386733589366561 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1838749134635779855, guid: 7bb33c794e257814ba3c8034082b7621, type: 3}
-  m_PrefabInstance: {fileID: 80014551200841774}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0288cb5c3f7f76248a4e2512d8d29fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &4001820372560598672 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3933074736033371838, guid: 7bb33c794e257814ba3c8034082b7621, type: 3}
@@ -439,14 +429,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3933074736033371838, guid: 7bb33c794e257814ba3c8034082b7621, type: 3}
   m_PrefabInstance: {fileID: 8990893748968323565}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7296568765209951970 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1838749134635779855, guid: 7bb33c794e257814ba3c8034082b7621, type: 3}
-  m_PrefabInstance: {fileID: 8990893748968323565}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0288cb5c3f7f76248a4e2512d8d29fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

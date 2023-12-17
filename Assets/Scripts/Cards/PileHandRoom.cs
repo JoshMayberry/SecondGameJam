@@ -1,3 +1,3 @@
 using jmayberry.CardDeck;
 
-public class PileHandRoom : PileHand<RoomType, RoomSomething> { }
+public class PileHandRoom : PileHand<CardType, CardSideEffect> { }

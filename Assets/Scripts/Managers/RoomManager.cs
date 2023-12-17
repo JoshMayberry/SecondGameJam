@@ -2,7 +2,17 @@ using UnityEngine;
 
 using jmayberry.CustomAttributes;
 using UnityEngine.UI;
+using jmayberry.CardDeck;
 
+public enum ConstructMode {
+	Nothing,
+	Room,
+	Monster,
+	Loot,
+	Effect,
+}
+
+// TODO: Rename to 'BuildManager'
 public class RoomManager : MonoBehaviour {
 	[Required] public Room roomEnterance;
 	[Required] public Button construction_uiBuild;
@@ -10,13 +20,14 @@ public class RoomManager : MonoBehaviour {
 	[Required] public Button construction_uiRotateClockwise;
 	[Required] public Button construction_uiRotateCounterClockwise;
 
-	private int buildSpotLayer;
-	private int connectSpotLayer;
+	private int spotConnectLayer;
+	private int spotMonsterLayer;
+	private int spotLootLayer;
 
-	[Readonly] public bool canConstruct;
-	[Readonly] public int connectionIndex;
-	[Readonly] public Room blueprintRoom;
-	[Readonly] public ConnectSpot targetConnection;
+	[Readonly] public ConstructMode currentConstructMode;
+	[Readonly] public int rotationIndex;
+    [Readonly] public Buildable currentBlueprint;
+    [Readonly] public Spot currentTargetConnection;
 
 	public static RoomManager instance { get; private set; }
 	public void Awake() {
@@ -26,178 +37,129 @@ public class RoomManager : MonoBehaviour {
 
 		instance = this;
 
-		this.buildSpotLayer = LayerMask.NameToLayer("Build Spot");
-		this.connectSpotLayer = LayerMask.NameToLayer("Connect Spot");
+		this.spotConnectLayer = LayerMask.NameToLayer("Connect Spot");
+		this.spotMonsterLayer = LayerMask.NameToLayer("Monster Spot");
+		this.spotLootLayer = LayerMask.NameToLayer("Loot Spot");
 	}
 
 	public void Start() {
-		this.SetBuildSpotVisibility(false);
-		this.SetConnectSpotVisibility(false);
-		this.ConstructionUI_SetVisibility(false);
+		this.SetConstructMode(ConstructMode.Nothing);
 	}
 
-	// Use: https://discussions.unity.com/t/edit-camera-culling-mask/55812/3
-	public void SetBuildSpotVisibility(bool state) {
-		if (state) {
-			Camera.main.cullingMask |= 1 << this.buildSpotLayer;
+	public void SetConstructMode(ConstructMode mode) {
+		if (this.currentTargetConnection != null) {
+			if (this.currentConstructMode != mode) {
+				this.currentTargetConnection.SetVisibility(true);
+				this.currentTargetConnection = null;
+			}
 		}
-		else {
-			Camera.main.cullingMask &= ~(1 << this.buildSpotLayer);
-		}
-	}
-	public void SetConnectSpotVisibility(bool state) {
-		if (state) {
-			Camera.main.cullingMask |= 1 << this.connectSpotLayer;
-		}
-		else {
-			Camera.main.cullingMask &= ~(1 << this.connectSpotLayer);
-		}
-	}
 
-	public void ConstructionUI_SetVisibility(bool state) {
-		this.canConstruct = state;
-		if (!state) {
-			this.targetConnection = null;
+		this.currentConstructMode = mode;
+		SetLayerVisibility(this.spotConnectLayer, this.currentConstructMode == ConstructMode.Room);
+		SetLayerVisibility(this.spotMonsterLayer, this.currentConstructMode == ConstructMode.Monster);
+		SetLayerVisibility(this.spotLootLayer, this.currentConstructMode == ConstructMode.Loot);
+
+		var canConstruct = (this.currentConstructMode != ConstructMode.Nothing);
+		this.construction_uiBuild.gameObject.SetActive(canConstruct);
+		this.construction_uiCancel.gameObject.SetActive(canConstruct);
+		this.construction_uiRotateClockwise.gameObject.SetActive(canConstruct);
+		this.construction_uiRotateCounterClockwise.gameObject.SetActive(canConstruct);
+		if (!canConstruct) {
+			if (this.currentTargetConnection != null) {
+				this.currentTargetConnection.SetVisibility(true);
+			}
 			this.RemoveBlueprint();
-        }
+		}
 
-		this.construction_uiBuild.gameObject.SetActive(state);
-		this.construction_uiCancel.gameObject.SetActive(state);
-		this.construction_uiRotateClockwise.gameObject.SetActive(state);
-		this.construction_uiRotateCounterClockwise.gameObject.SetActive(state);
-
+        this.construction_uiCancel.interactable = true;
 		this.construction_uiBuild.interactable = false;
-		this.construction_uiCancel.interactable = true;
 		this.construction_uiRotateClockwise.interactable = false;
 		this.construction_uiRotateCounterClockwise.interactable = false;
 	}
 
-	public void ConstructionUI_SetCanBuild(bool state) {
-		this.construction_uiBuild.interactable = state;
-	}
-	public void ConstructionUI_SetCanCancel(bool state) {
-		this.construction_uiCancel.interactable = state;
-	}
-	public void ConstructionUI_SetCanRotate(bool state) {
-		this.construction_uiRotateClockwise.interactable = state;
-		this.construction_uiRotateCounterClockwise.interactable = state;
+	// Use: https://discussions.unity.com/t/edit-camera-culling-mask/55812/3
+	private void SetLayerVisibility(int layerNumber, bool state) {
+		if (state) {
+			Camera.main.cullingMask |= 1 << layerNumber;
+		}
+		else {
+			Camera.main.cullingMask &= ~(1 << layerNumber);
+		}
 	}
 
 	public void OnBlueprint_RotateClockwise() {
-		if (this.blueprintRoom == null) {
-			return;
-		}
-
-		if (this.blueprintRoom.connectSpots.Count - 1 <= this.connectionIndex) {
-			this.connectionIndex = 0;
-		} else {
-			this.connectionIndex++;
-		}
-
+		this.currentBlueprint.UseNextSpot();
 		this.UpdateBlueprint();
 	}
 
 	public void OnBlueprint_RotateCounterClockwise() {
-		if (this.blueprintRoom == null) {
-			return;
-		}
-
-		if (this.blueprintRoom.connectSpots.Count - 1 < this.connectionIndex) {
-			this.connectionIndex = 0;
-		}
-        else if (this.connectionIndex <= 0) {
-			this.connectionIndex = this.blueprintRoom.connectSpots.Count - 1;
-        }
-        else {
-			this.connectionIndex--;
-		}
-
-		this.UpdateBlueprint();
-	}
+        this.currentBlueprint.UsePreviousSpot();
+        this.UpdateBlueprint();
+    }
 
 	public void OnBlueprint_Build() {
-
-		// Update connection spots
-        this.blueprintRoom.connectSpots[this.connectionIndex].MarkUsed();
-		this.blueprintRoom.SetConnectSpotVisibility(true);
-        this.targetConnection.MarkUsed();
-        this.targetConnection = null;
-
-        this.blueprintRoom.Build();
-        this.blueprintRoom = null;
+        this.currentBlueprint.BuildBlueprint();
+		this.currentBlueprint = null;
+        this.currentTargetConnection = null;
 
         RoomCardManager.instanceApplied.selectedCard.PlayCard();
 	}
 
 	public void OnBlueprint_Cancel() {
-		if (this.blueprintRoom != null) {
-            this.blueprintRoom.SetConnectSpotVisibility(true);
-        }
-
-		if (this.targetConnection != null) {
-			this.targetConnection.gameObject.SetActive(true);
-		}
-
-        RoomCardManager.instanceApplied.selectedCard.Deselect();
+		RoomCardManager.instanceApplied.selectedCard.Deselect();
 	}
 
-	public void SwapConnectionSpot(ConnectSpot targetSpot) {
-		if (!canConstruct) {
+	public void SwapSpot(Spot targetSpot) {
+		if (this.currentConstructMode == ConstructMode.Nothing) {
 			Debug.LogWarning("Something tried to build when building was not permitted");
 			return;
 		}
 
-		if (this.targetConnection != null) {
-			this.targetConnection.gameObject.SetActive(true);
-        }
+		if (this.currentTargetConnection != null) {
+			this.currentTargetConnection.SetVisibility(true);
+		}
 
-		this.targetConnection = targetSpot;
+		this.currentTargetConnection = targetSpot;
 		this.SwapBlueprint(RoomCardManager.instanceApplied.selectedCard);
 	}
 
-	public void SwapBlueprint(UiTowerCard card) {
-        if (!canConstruct) {
-            Debug.LogWarning("Something tried to build when building was not permitted");
+	public void SwapBlueprint(RoomCard card) {
+		if (this.currentConstructMode == ConstructMode.Nothing) {
+			Debug.LogWarning("Something tried to build when building was not permitted");
+			return;
+		}
+
+		this.RemoveBlueprint();
+
+        var cardData = (RoomCardData)card.card;
+		this.currentBlueprint = cardData.blueprint;
+		this.currentBlueprint.SetCard(card, cardData);
+
+		this.UpdateBlueprint();
+	}
+
+	public void UpdateBlueprint() {
+        if (this.currentTargetConnection == null) {
             return;
         }
 
-        this.RemoveBlueprint();
-
-        RoomCardData cardData = (RoomCardData)card.card;
-        this.blueprintRoom = Instantiate(cardData.roomPrefab, this.transform);
-        this.connectionIndex = 0;
-
-		this.ConstructionUI_SetCanRotate(cardData.canRotate);
-        this.UpdateBlueprint();
-    }
-
-	public void UpdateBlueprint() {
-		if (this.blueprintRoom == null) {
+        if (this.currentBlueprint == null) {
 			Debug.LogWarning("No blueprint to update");
 			return;
 		}
 
-		ConnectSpot blueprintConnection = this.blueprintRoom.connectSpots[this.connectionIndex];
-        this.ConstructionUI_SetCanBuild(true);
+        bool canRotate = this.currentBlueprint.HasMultipleSpots();
+        this.construction_uiRotateClockwise.interactable = canRotate;
+        this.construction_uiRotateCounterClockwise.interactable = canRotate;
 
-		// Hide connect spots
-        this.blueprintRoom.SetConnectSpotVisibility(false);
-        this.targetConnection.gameObject.SetActive(false);
-
-        // Line up rotation
-        this.blueprintRoom.transform.rotation = Quaternion.identity;
-        Quaternion targetRotation = Quaternion.Inverse(blueprintConnection.transform.rotation) * this.targetConnection.transform.rotation;
-        this.blueprintRoom.transform.rotation = Quaternion.Euler(0, 0, targetRotation.eulerAngles.z + 180);
-
-        // Line up position
-        this.blueprintRoom.transform.position += this.targetConnection.transform.position - blueprintConnection.transform.position;
+        this.construction_uiBuild.interactable = true;
+        this.currentBlueprint.ShowBlueprint(this.currentTargetConnection);
     }
 
 	public void RemoveBlueprint() {
-        if (this.blueprintRoom != null) {
-            Destroy(this.blueprintRoom.gameObject);
+        if (this.currentBlueprint != null) {
+			this.currentBlueprint.UnloadBlueprint();
+			this.currentBlueprint = null;
         }
-
-		// TODO: Spawn dust particles
     }
 }

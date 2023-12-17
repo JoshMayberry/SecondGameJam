@@ -10,20 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d43d984c085d0d249b050953739c16a6, type: 3}
-  m_Name: Entrance
+  m_Name: Slime
   m_EditorClassIdentifier: 
-  title: Entrance
-  description: Abandon all hope!
-  rarity: 0
+  title: Slime
+  description: Rock, Paper, Scissors! Wait- different game...
+  rarity: 1
   holo: 0
   afterUse: 0
-  cost: 0
-  artwork: {fileID: -6003594548577529567, guid: dcdb19121c6226247a2aeef0c7e72750, type: 3}
+  cost: 1
+  artwork: {fileID: 0}
   actionList: []
-  type: 3
-  roomPrefab: {fileID: 6359196619859792217, guid: 25ef64c46bcfd9649b69e0f36e6f15d3, type: 3}
+  constructMode: 2
+  effectType: 0
+  cardType: 4
+  constructionPrefab: {fileID: 8370900321634234410, guid: 8e0b2f80aa12c0e42a6e540f1605f22b, type: 3}
   canRotate: 0
-  canConnectN: 1
-  canConnectE: 1
-  canConnectS: 1
-  canConnectW: 0

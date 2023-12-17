@@ -12,12 +12,4 @@ public class DebugManager : MonoBehaviour {
 
 		instance = this;
     }
-
-    public void SetBuildSpotsOn() {
-        RoomManager.instance.SetBuildSpotVisibility(true);
-    }
-
-    public void SetBuildSpotsOff() {
-        RoomManager.instance.SetBuildSpotVisibility(false);
-    }
 }

@@ -49,13 +49,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e86c810a575e3b498e6a21170700fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 0}
-  connectSpots:
+  connectSpotList:
   - {fileID: 5005127301699397828}
   - {fileID: 9102306649929672664}
   - {fileID: 7004131458824567145}
   - {fileID: 6456474144762589564}
-  buildSpots: []
+  card: {fileID: 0}
+  cardData: {fileID: 0}
+  isBlueprint: 1
+  targetConnection: {fileID: 0}
+  blueprintConnection: {fileID: 0}
+  constructed: {fileID: 0}
   enterHere: {fileID: 0}
 --- !u!1 &4720430435280002712
 GameObject:

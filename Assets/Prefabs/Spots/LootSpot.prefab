@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3933074736033371838}
-  - component: {fileID: 1838749134635779855}
+  - component: {fileID: 3353701722185301402}
   - component: {fileID: 3395419752816426127}
   - component: {fileID: 676329478455873204}
-  m_Layer: 9
-  m_Name: BuildSpot
+  m_Layer: 10
+  m_Name: LootSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1838749134635779855
+--- !u!114 &3353701722185301402
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,9 +43,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5584390622706841139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0288cb5c3f7f76248a4e2512d8d29fa2, type: 3}
+  m_Script: {fileID: 11500000, guid: 37f75b8a3c0f0664382d98f11a47e298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  room: {fileID: 0}
+  isUsed: 0
+  type: 0
 --- !u!212 &3395419752816426127
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -85,14 +88,14 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 113269717
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2706377687074471749, guid: 883d4a8eae525194e8b57944ed2a304b, type: 3}
+  m_Sprite: {fileID: -6147046527810986623, guid: d2b55e89cd9ddbf4f89824c565df9200, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

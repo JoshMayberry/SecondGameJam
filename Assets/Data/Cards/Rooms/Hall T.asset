@@ -10,20 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d43d984c085d0d249b050953739c16a6, type: 3}
-  m_Name: Hall 4 Way
+  m_Name: Hall T
   m_EditorClassIdentifier: 
-  title: 4 Way Hall
-  description: Get from point A to B, C, or D!
-  rarity: 2
+  title: T Hall
+  description: Get from point A to point B... And C!
+  rarity: 1
   holo: 0
   afterUse: 0
   cost: 2
   artwork: {fileID: -6003594548577529567, guid: dcdb19121c6226247a2aeef0c7e72750, type: 3}
   actionList: []
-  type: 5
-  roomPrefab: {fileID: -1158393244883823078, guid: 8841c10c1401e5d449dd52f6ed5af4a9, type: 3}
-  canRotate: 0
-  canConnectN: 1
-  canConnectE: 1
-  canConnectS: 1
-  canConnectW: 1
+  constructMode: 1
+  effectType: 0
+  cardType: 3
+  constructionPrefab: {fileID: 5012243718023552611, guid: c4b0101a6a6b66a409b241bba11defb3, type: 3}
+  canRotate: 1
