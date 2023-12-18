@@ -59,7 +59,9 @@ public class Hero : MonoBehaviour, ISpawnable {
 	[Readonly] private float timeExit;
 	[Readonly] private float timeSpent;
 
-	void Awake() {
+    static private HeroExpectation emptyExpectation = new HeroExpectation();
+
+    void Awake() {
 		this.initialScale = this.transform.localScale;
 	}
 
@@ -172,34 +174,33 @@ public class Hero : MonoBehaviour, ISpawnable {
 		var expectationScoreCatalogue = new Dictionary<HeroExpectationType, float> {
 			{HeroExpectationType.MonsterBattle, this.getScore(this.journal.experiences, HeroExpectationType.MonsterBattle)},
 			{HeroExpectationType.LootGained, this.getScore(this.journal.experiences, HeroExpectationType.LootGained)},
-			{HeroExpectationType.TimeSpentMin, this.getTimeSpentMinScore()},
-			{HeroExpectationType.TimeSpentMax, this.getTimeSpentMaxScore()},
+			//{HeroExpectationType.TimeSpentMin, this.getTimeSpentMinScore()},
+			//{HeroExpectationType.TimeSpentMax, this.getTimeSpentMaxScore()},
 			{HeroExpectationType.HpCost, this.getScore(this.journal.experiences, HeroExpectationType.HpCost)},
 			{HeroExpectationType.HpLeft, this.getScore(this.journal.experiences, HeroExpectationType.HpLeft)},
 		};
 
 		var score = Math.Clamp((int)Math.Round(expectationScoreCatalogue.ToList().Sum(pair => pair.Value)), -10, 1000);
-		Debug.Log(score);
 		var text = this.GenerateReviewText(expectationScoreCatalogue);
 		ReviewBoard.instance.LeaveReview(this.heroData.type, score, text);
 	}
 
 	private float getScore(SerializedDictionary<HeroExpectationType, HeroExpectation> experience, HeroExpectationType expectationType) {
-		var expectation = this.heroData.expectation.GetValueOrDefault(expectationType, default);
-		var reality = experience.GetValueOrDefault(expectationType, default);
+		var expectation = this.heroData.expectation.GetValueOrDefault(expectationType, emptyExpectation);
+		var reality = experience.GetValueOrDefault(expectationType, emptyExpectation);
 
 		return (reality.expValue >= expectation.expValue) ? expectation.scorePositive : -expectation.scoreNegative;
     }
 
     private float getScore(SerializedDictionary<HeroExpectationType, float> experience, HeroExpectationType expectationType) {
-        var expectation = this.heroData.expectation.GetValueOrDefault(expectationType, default);
-        var reality = experience.GetValueOrDefault(expectationType, default);
+        var expectation = this.heroData.expectation.GetValueOrDefault(expectationType, emptyExpectation);
+        var reality = experience.GetValueOrDefault(expectationType, 0);
 
         return (reality >= expectation.expValue) ? expectation.scorePositive : -expectation.scoreNegative;
     }
 
     private float getTimeSpentMinScore() {
-        var expectation = this.heroData.expectation.GetValueOrDefault(HeroExpectationType.TimeSpentMin, default);
+        var expectation = this.heroData.expectation.GetValueOrDefault(HeroExpectationType.TimeSpentMin, emptyExpectation);
         if (expectation.expValue == 0) {
             return 0;
         }
@@ -208,7 +209,7 @@ public class Hero : MonoBehaviour, ISpawnable {
     }
 
     private float getTimeSpentMaxScore() {
-        var expectation = this.heroData.expectation.GetValueOrDefault(HeroExpectationType.TimeSpentMin, default);
+        var expectation = this.heroData.expectation.GetValueOrDefault(HeroExpectationType.TimeSpentMin, emptyExpectation);
         if (expectation.expValue == 0) {
             return 0;
         }
@@ -254,23 +255,23 @@ public class Hero : MonoBehaviour, ISpawnable {
 			textParts.Add(this.DescribeAspect(item.Key, (int)Math.Round(item.Value)));
 		}
 
-		switch (filteredScoreList.Count) {
-			case 1:
-				Debug.Log($"Hero wrote a review about {filteredScoreList[0].Key}");
-				break;
+		//switch (filteredScoreList.Count) {
+		//	case 1:
+		//		Debug.Log($"Hero wrote a review about {filteredScoreList[0].Key}");
+		//		break;
 
-			case 2:
-				Debug.Log($"Hero wrote a review about {filteredScoreList[0].Key} and {filteredScoreList[1].Key}");
-				break;
+		//	case 2:
+		//		Debug.Log($"Hero wrote a review about {filteredScoreList[0].Key} and {filteredScoreList[1].Key}");
+		//		break;
 
-			case 3:
-				Debug.Log($"Hero wrote a review about {filteredScoreList[0].Key}, {filteredScoreList[1].Key}, and {filteredScoreList[2].Key}");
-				break;
+		//	case 3:
+		//		Debug.Log($"Hero wrote a review about {filteredScoreList[0].Key}, {filteredScoreList[1].Key}, and {filteredScoreList[2].Key}");
+		//		break;
 
-			default:
-				Debug.LogError("This should never happen");
-				break;
-		}
+		//	default:
+		//		Debug.LogError("This should never happen");
+		//		break;
+		//}
 
 		return string.Join("\n", textParts);
 	}
@@ -548,6 +549,14 @@ public class Hero : MonoBehaviour, ISpawnable {
         var randomChoice = UnityEngine.Random.Range(0, 3);
         switch (score) {
             case 0:
+                if (hpLeftPercentage == 100) {
+                    switch (randomChoice) {
+                        case 0: return "I didntt see a single mob.";
+                        case 1: return "It was so quiet without any monsters.";
+                        default: return "Where did the goblins go?";
+                    }
+                }
+
                 switch (randomChoice) {
                     case 0: return "Barely made it out alive, clinging to my last breath.";
                     case 1: return $"Survived, but just barely. Only {hpLeftPercentage}% health left.";

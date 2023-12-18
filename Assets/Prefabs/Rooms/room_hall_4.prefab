@@ -36,6 +36,7 @@ Transform:
   - {fileID: 8165649676229687977}
   - {fileID: 7939978918565487640}
   - {fileID: 6240253741230894093}
+  - {fileID: 2477647151421601383}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-1158393244883823078
@@ -55,12 +56,19 @@ MonoBehaviour:
   - {fileID: 9102306649929672664}
   - {fileID: 7004131458824567145}
   - {fileID: 6456474144762589564}
+  upgradeSpotList:
+  - {fileID: 3926003274516532070}
+  upgradeSprites:
+  - {fileID: 4107754553830170082, guid: 7cca16a3f6612ff4d874c05b8527139e, type: 3}
+  - {fileID: -5403186550657861465, guid: 7cca16a3f6612ff4d874c05b8527139e, type: 3}
+  spriteRenderer: {fileID: 2742104686700718328}
   card: {fileID: 0}
   cardData: {fileID: 0}
   isBlueprint: 1
   targetConnection: {fileID: 0}
   blueprintConnection: {fileID: 0}
   constructed: {fileID: 0}
+  blueprintBuildingMe: {fileID: 0}
   drawGizmos: 0
   checkDistance: 1.25
   checkSize: {x: 1.25, y: 1.25}
@@ -411,6 +419,79 @@ PolygonCollider2D:
       - {x: 1.25, y: -1.25}
       - {x: 1.2402465, y: -0.24228787}
   m_UseDelaunayMesh: 0
+--- !u!1001 &1510755739972083929
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 9069675124811193875}
+    m_Modifications:
+    - target: {fileID: 3933074736033371838, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.002805233
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933074736033371838, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0037213378
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933074736033371838, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933074736033371838, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933074736033371838, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933074736033371838, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933074736033371838, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933074736033371838, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933074736033371838, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933074736033371838, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584390622706841139, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+      propertyPath: m_Name
+      value: UpgradeSpot
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+--- !u!4 &2477647151421601383 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3933074736033371838, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+  m_PrefabInstance: {fileID: 1510755739972083929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3926003274516532070 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2489575225608317887, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
+  m_PrefabInstance: {fileID: 1510755739972083929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75b47ffec575aa47adb23527b300554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5172139804026022935
 PrefabInstance:
   m_ObjectHideFlags: 0

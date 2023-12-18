@@ -15,16 +15,16 @@ MonoBehaviour:
   title: Add Carpet
   description: Roll it out!
   rarity: 2
-  holo: 0
+  holo: 1
   afterUse: 0
-  cost: 0
+  cost: 4
   artwork: {fileID: -2924773151829897135, guid: dcdb19121c6226247a2aeef0c7e72750, type: 3}
   actionList: []
   constructMode: 4
-  effectType: 1
+  effectType: 2
   cardType: 6
   blueprint: {fileID: 0}
-  heroInterest:
+  roomProvides:
     _serializedList: []
   attackDamage: 1
   level: 1

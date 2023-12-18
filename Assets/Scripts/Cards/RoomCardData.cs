@@ -19,6 +19,7 @@ public enum CardType {
 public enum CardSideEffect {
 	None,
 	DestroyRoom,
+	AddCarpet,
 }
 
 [CreateAssetMenu(fileName = "NewRoom", menuName = "Dungeon/Room")]

@@ -8,26 +8,37 @@ using jmayberry.CustomAttributes;
 
 public class Buildable : MonoBehaviour, ISpawnable {
 	[SerializeField] public List<Spot> connectSpotList = new List<Spot>();
+	[SerializeField] public List<Spot> upgradeSpotList = new List<Spot>();
+    [SerializeField] public List<Sprite> upgradeSprites = new List<Sprite>();
+	[Required][SerializeField] private SpriteRenderer spriteRenderer;
 
-	[Readonly] public RoomCard card;
+    [Readonly] public RoomCard card;
 	public RoomCardData cardData;
+	[Readonly] private int upgradeIndex = 0;
 	[Readonly] private int connectSpotIndex;
-	[Readonly] public bool isBlueprint = true;
+    [Readonly] public bool isBlueprint = true;
 	[Readonly] public Spot targetConnection;
 	[Readonly] public Spot blueprintConnection;
 	[Readonly] public Buildable constructed;
+	[Readonly] public Buildable blueprintBuildingMe;
 
-	public virtual void Awake() {
+    public virtual void Awake() {
 		if (this.connectSpotList.Count == 0) {
 			Debug.LogWarning("Buildable missing connection spots");
-		}
+        }
 
-		foreach (Spot buildSpot in this.connectSpotList) {
-			buildSpot.SetContainer(this);
-		}
-	}
+        foreach (Spot buildSpot in this.connectSpotList) {
+            buildSpot.SetContainer(this);
+        }
 
-	public bool HasMultipleSpots() {
+        foreach (Spot buildSpot in this.upgradeSpotList) {
+            buildSpot.SetContainer(this);
+        }
+
+		this.UpdateSprite();
+    }
+
+    public bool HasMultipleSpots() {
 		if (!this.isBlueprint) {
 			Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
 			return false;
@@ -129,12 +140,14 @@ public class Buildable : MonoBehaviour, ISpawnable {
 			this.constructed = Instantiate(this);
 			this.constructed.cardData = this.cardData;
 			this.constructed.isBlueprint = false;
-		}
+			this.constructed.blueprintBuildingMe = this;
+        }
 
-		this.blueprintConnection = this.constructed.GetBuildSpot(this.connectSpotIndex);
+        this.blueprintConnection = this.constructed.GetBuildSpot(this.connectSpotIndex);
+		this.constructed.targetConnection = this.targetConnection;
 
-		// Hide connect spots
-		this.constructed.SetSpotVisibility(false);
+        // Hide connect spots
+        this.constructed.SetSpotVisibility(false);
 		this.targetConnection.SetVisibility(false);
 
 		// Line up rotation
@@ -178,7 +191,20 @@ public class Buildable : MonoBehaviour, ISpawnable {
 		this.constructed.enabled = false; // Turn off the Buildable Script now that it is built
 		this.constructed = null;
 
-		// TODO: Spawn dust particles
-		// TODO: Change transparency or something to be solid
-	}
+        // TODO: Spawn dust particles
+        // TODO: Change transparency or something to be solid
+    }
+
+    public void DoUpgrade(Spot spot) {
+        spot.MarkUsed();
+
+		this.upgradeIndex++;
+		this.UpdateSprite();
+    }
+
+	public void UpdateSprite() {
+        if (this.upgradeSprites.Count - 1 >= this.upgradeIndex) {
+            this.spriteRenderer.sprite = this.upgradeSprites[this.upgradeIndex];
+        }
+    }
 }

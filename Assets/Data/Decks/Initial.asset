@@ -22,8 +22,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e0b50096b697a747adb8adbe92e70d2, type: 2}
   - {fileID: 11400000, guid: b4121db70458d20428e911b18335ce3c, type: 2}
   - {fileID: 11400000, guid: 1f46ef55c7d0fe14282bbcb849037a3b, type: 2}
+  - {fileID: 11400000, guid: 9958e42832058d34b95d23ed2cfb3554, type: 2}
   - {fileID: 11400000, guid: 21821f038581dc743bce85c2ad6f7313, type: 2}
   - {fileID: 11400000, guid: cc4432086fa27bf44aab90bba0a48554, type: 2}
+  - {fileID: 11400000, guid: 998df9fceb12d5f4bbc12309180e7537, type: 2}
+  - {fileID: 11400000, guid: 6a4ee654978e91e4284650d13b950320, type: 2}
+  - {fileID: 11400000, guid: 6a4ee654978e91e4284650d13b950320, type: 2}
   onCardUse:
     m_PersistentCalls:
       m_Calls: []

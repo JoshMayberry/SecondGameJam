@@ -6,12 +6,14 @@ using jmayberry.Spawner;
 using jmayberry.CustomAttributes;
 using AYellowpaper.SerializedCollections;
 using UnityEngine.UI;
+using TMPro;
 
 public class ReviewBoard : MonoBehaviour {
 	[Required][SerializeField] private Transform heroReviewContainer;
 	[Required][SerializeField] private HeroReview heroReviewPrefab;
 	[Required][SerializeField] private Image toggleShowReviewsButton;
-	[Required][SerializeField] private Transform reviewBoardContainer;
+	[Required][SerializeField] private TMP_Text bestScoreText;
+    [Required][SerializeField] private Transform reviewBoardContainer;
     private UnitySpawner<HeroReview> heroReviewSpawner;
 	[SerializedDictionary("Hero Type", "Review")] public SerializedDictionary<HeroType, List<HeroReview>> reviews = new SerializedDictionary<HeroType, List<HeroReview>>();
 	[SerializedDictionary("Hero Type", "Sprite")] public SerializedDictionary<HeroType, Sprite> spriteCatalogue = new SerializedDictionary<HeroType, Sprite>();
@@ -37,10 +39,13 @@ public class ReviewBoard : MonoBehaviour {
 
 		if (this.bestReview == null) {
 			this.bestReview = review;
-			this.toggleShowReviewsButton.gameObject.SetActive(true);
+			this.bestScoreText.text = $"Best Score: {review.score}";
+			this.bestScoreText.gameObject.SetActive(true);
+            this.toggleShowReviewsButton.gameObject.SetActive(true);
         }
-		else if (review.score > this.bestReview.score) {
+        else if (review.score > this.bestReview.score) {
             this.bestReview = review;
+			this.bestScoreText.text = $"Best Score: {review.score}";
         }
 
         List<HeroReview> reviewList;
