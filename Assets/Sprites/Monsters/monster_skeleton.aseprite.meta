@@ -147,7 +147,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 52
+      y: 28
       width: 11
       height: 15
     spriteID: d2e378cc52bebed4cb78859d66921a41
@@ -158,7 +158,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 52}
+    uvTransform: {x: 4, y: 28}
   - name: monster_skeleton_Frame_2
     originalName: 
     pivot: {x: 0.45454547, y: 0}
@@ -186,91 +186,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 75
-      width: 11
-      height: 15
-    spriteID: ccf51da10055e5141abc4653e04ea276
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 75}
-  - name: monster_skeleton_Frame_4
-    originalName: 
-    pivot: {x: 0.45454547, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 28
-      width: 11
-      height: 16
-    spriteID: 35e2f00aa5248a647bc8687de629666e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
-  - name: monster_skeleton_Frame_5
-    originalName: 
-    pivot: {x: 0.45454547, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 98
-      width: 11
-      height: 15
-    spriteID: c2b90b38dc2b0004aaeeb21ead88ab59
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 98}
-  - name: monster_skeleton_Frame_6
-    originalName: 
-    pivot: {x: 0.45454547, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 23
-      y: 49
-      width: 11
-      height: 14
-    spriteID: 122b2c77abf2b9f42a730d69226556ae
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 23, y: 49}
-  - name: monster_skeleton_Frame_7
-    originalName: 
-    pivot: {x: 0.45454547, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
       x: 23
       y: 4
       width: 11
       height: 15
-    spriteID: 3d10cd3035e3b57478d6f2ed07f3d068
+    spriteID: ccf51da10055e5141abc4653e04ea276
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -320,38 +240,6 @@ ScriptedImporter:
         width: 11
         height: 15
       spriteId: ccf51da10055e5141abc4653e04ea276
-    - name: monster_skeleton_Frame_4
-      frameIndex: 4
-      cellRect:
-        x: 3
-        y: 0
-        width: 11
-        height: 16
-      spriteId: 35e2f00aa5248a647bc8687de629666e
-    - name: monster_skeleton_Frame_5
-      frameIndex: 5
-      cellRect:
-        x: 3
-        y: 0
-        width: 11
-        height: 15
-      spriteId: c2b90b38dc2b0004aaeeb21ead88ab59
-    - name: monster_skeleton_Frame_6
-      frameIndex: 6
-      cellRect:
-        x: 3
-        y: 0
-        width: 11
-        height: 14
-      spriteId: 122b2c77abf2b9f42a730d69226556ae
-    - name: monster_skeleton_Frame_7
-      frameIndex: 7
-      cellRect:
-        x: 3
-        y: 0
-        width: 11
-        height: 15
-      spriteId: 3d10cd3035e3b57478d6f2ed07f3d068
     linkedCells: []
     parentIndex: -1
   platformSettings:

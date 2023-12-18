@@ -18,10 +18,13 @@ MonoBehaviour:
   holo: 0
   afterUse: 0
   cost: 0
-  artwork: {fileID: -2924773151829897135, guid: dcdb19121c6226247a2aeef0c7e72750, type: 3}
+  artwork: {fileID: 5817589384847550592, guid: dcdb19121c6226247a2aeef0c7e72750, type: 3}
   actionList: []
   constructMode: 4
   effectType: 1
   cardType: 6
-  constructionPrefab: {fileID: 0}
-  canRotate: 0
+  blueprint: {fileID: 0}
+  heroInterest:
+    _serializedList: []
+  attackDamage: 1
+  level: 1

@@ -421,6 +421,46 @@ ScriptedImporter:
     uvTransform: {x: 256, y: 108}
   - name: CardTemplate_Frame_3
     originalName: 
+    pivot: {x: 0.5, y: 0.06818178}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 160
+      width: 60
+      height: 44
+    spriteID: 87a1004ca56c904478ec099123f8e085
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 256, y: 160}
+  - name: CardTemplate_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.06818178}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 212
+      width: 60
+      height: 44
+    spriteID: 00e427ef5cc497a4f83038ac983314e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 256, y: 212}
+  - name: CardTemplate_Frame_3
+    originalName: 
     pivot: {x: 0.50000006, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -430,7 +470,7 @@ ScriptedImporter:
       y: 328
       width: 68
       height: 100
-    spriteID: 87a1004ca56c904478ec099123f8e085
+    spriteID: 10e31f1c93f8abf40a570a6700cecbd7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -536,22 +576,6 @@ ScriptedImporter:
         width: 68
         height: 100
       spriteId: c352929751627d44196e7556c6285800
-    - name: CardTemplate_Frame_13
-      frameIndex: 13
-      cellRect:
-        x: 10
-        y: 53
-        width: 60
-        height: 44
-      spriteId: 5cd9395765f318a4abd0597be178678a
-    - name: CardTemplate_Frame_14
-      frameIndex: 14
-      cellRect:
-        x: 10
-        y: 53
-        width: 60
-        height: 44
-      spriteId: 944b22216152ffb4b811251bd3ae15a5
     - name: CardTemplate_Frame_15
       frameIndex: 15
       cellRect:
@@ -559,7 +583,39 @@ ScriptedImporter:
         y: 53
         width: 60
         height: 44
+      spriteId: 5cd9395765f318a4abd0597be178678a
+    - name: CardTemplate_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 10
+        y: 53
+        width: 60
+        height: 44
+      spriteId: 944b22216152ffb4b811251bd3ae15a5
+    - name: CardTemplate_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 10
+        y: 53
+        width: 60
+        height: 44
       spriteId: 2b03990f5a2dec440b9cf812dbc57825
+    - name: CardTemplate_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 10
+        y: 53
+        width: 60
+        height: 44
+      spriteId: f75f4b8c855621645a48fc53231a8417
+    - name: CardTemplate_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 10
+        y: 53
+        width: 60
+        height: 44
+      spriteId: 87a1004ca56c904478ec099123f8e085
     - name: CardTemplate_Frame_2
       frameIndex: 2
       cellRect:
@@ -567,7 +623,7 @@ ScriptedImporter:
         y: 53
         width: 60
         height: 44
-      spriteId: f75f4b8c855621645a48fc53231a8417
+      spriteId: 00e427ef5cc497a4f83038ac983314e4
     - name: CardTemplate_Frame_3
       frameIndex: 3
       cellRect:
@@ -575,7 +631,7 @@ ScriptedImporter:
         y: 6
         width: 68
         height: 100
-      spriteId: 87a1004ca56c904478ec099123f8e085
+      spriteId: 10e31f1c93f8abf40a570a6700cecbd7
     linkedCells: []
     parentIndex: -1
   platformSettings:

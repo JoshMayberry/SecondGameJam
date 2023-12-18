@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dde1b10acc86fa499dc9f8b552512ce, type: 3}
+  m_Name: hero_swordsman
+  m_EditorClassIdentifier: 
+  title: Swordsman
+  description: KYAH!
+  type: 4
+  health: 8
+  speed: 2
+  destinationLimit: 3
+  expectation:
+    _serializedList:
+    - Key: 0
+      Value:
+        expValue: 0
+        scorePositive: 0
+        scoreNegative: 0
+    - Key: 1
+      Value:
+        expValue: 9
+        scorePositive: 7
+        scoreNegative: 4
+    - Key: 2
+      Value:
+        expValue: 5
+        scorePositive: 2
+        scoreNegative: 6
+    - Key: 3
+      Value:
+        expValue: 0
+        scorePositive: 0
+        scoreNegative: 0
+    - Key: 4
+      Value:
+        expValue: 0
+        scorePositive: 0
+        scoreNegative: 0
+    - Key: 5
+      Value:
+        expValue: 0
+        scorePositive: 0
+        scoreNegative: 0
+    - Key: 6
+      Value:
+        expValue: 6
+        scorePositive: 3
+        scoreNegative: 2

@@ -18,19 +18,23 @@ MonoBehaviour:
   holo: 0
   afterUse: 0
   cost: 0
-  artwork: {fileID: 0}
+  artwork: {fileID: -1993130100, guid: dcdb19121c6226247a2aeef0c7e72750, type: 3}
   actionList: []
   constructMode: 2
   effectType: 0
   cardType: 4
   blueprint: {fileID: 588799784305975897, guid: 184ac3f4652435d48b085170e2c5e61e, type: 3}
-  heroInterest:
+  roomProvides:
     _serializedList:
     - Key: 1
-      Value: 3
-    - Key: 2
-      Value: 3
-    - Key: 3
-      Value: 1
-    - Key: 4
-      Value: 5
+      Value:
+        expValue: 1
+        scorePositive: 0
+        scoreNegative: 0
+    - Key: 5
+      Value:
+        expValue: 1
+        scorePositive: 0
+        scoreNegative: 0
+  attackDamage: 1
+  level: 1

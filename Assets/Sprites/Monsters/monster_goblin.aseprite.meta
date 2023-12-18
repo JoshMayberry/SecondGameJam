@@ -147,7 +147,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 52
+      y: 28
       width: 14
       height: 15
     spriteID: a8263bb8712e56d499ce878c2f7959fb
@@ -158,28 +158,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 52}
+    uvTransform: {x: 4, y: 28}
   - name: monster_goblin_Frame_1
-    originalName: 
-    pivot: {x: 0.5714286, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 75
-      width: 14
-      height: 15
-    spriteID: 560182b5a8be65b49aef985deb223b18
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 75}
-  - name: monster_goblin_Frame_2
     originalName: 
     pivot: {x: 0.5714286, y: 0}
     alignment: 9
@@ -190,7 +170,7 @@ ScriptedImporter:
       y: 27
       width: 14
       height: 14
-    spriteID: 4df3fd85d25584e4bafa8d76777a64d3
+    spriteID: 560182b5a8be65b49aef985deb223b18
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -199,67 +179,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 26, y: 27}
-  - name: monster_goblin_Frame_3
-    originalName: 
-    pivot: {x: 0.5714286, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 98
-      width: 14
-      height: 15
-    spriteID: 26dc0c0bb14bd044ea16f040a2ed16d8
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 98}
-  - name: monster_goblin_Frame_4
-    originalName: 
-    pivot: {x: 0.5714286, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 28
-      width: 14
-      height: 16
-    spriteID: a674ac3eef3bbe94d80aa366e40c7979
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
-  - name: monster_goblin_Frame_6
-    originalName: 
-    pivot: {x: 0.5714286, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 26
-      y: 49
-      width: 14
-      height: 14
-    spriteID: f9f547b1391de694b87376848f46997e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 26, y: 49}
-  - name: monster_goblin_Frame_7
+  - name: monster_goblin_Frame_2
     originalName: 
     pivot: {x: 0.5714286, y: 0}
     alignment: 9
@@ -270,7 +190,7 @@ ScriptedImporter:
       y: 4
       width: 14
       height: 15
-    spriteID: 0494cdc9bc61b3340b72e0af5254446b
+    spriteID: 4df3fd85d25584e4bafa8d76777a64d3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -296,14 +216,6 @@ ScriptedImporter:
         width: 14
         height: 16
       spriteId: 16669d7bcb77782408dab6b3a7dd7791
-    - name: monster_goblin_Frame_5
-      frameIndex: 5
-      cellRect:
-        x: 0
-        y: 0
-        width: 14
-        height: 15
-      spriteId: a8263bb8712e56d499ce878c2f7959fb
     - name: monster_goblin_Frame_1
       frameIndex: 1
       cellRect:
@@ -311,7 +223,7 @@ ScriptedImporter:
         y: 0
         width: 14
         height: 15
-      spriteId: 560182b5a8be65b49aef985deb223b18
+      spriteId: a8263bb8712e56d499ce878c2f7959fb
     - name: monster_goblin_Frame_2
       frameIndex: 2
       cellRect:
@@ -319,7 +231,7 @@ ScriptedImporter:
         y: 0
         width: 14
         height: 14
-      spriteId: 4df3fd85d25584e4bafa8d76777a64d3
+      spriteId: 560182b5a8be65b49aef985deb223b18
     - name: monster_goblin_Frame_3
       frameIndex: 3
       cellRect:
@@ -327,31 +239,7 @@ ScriptedImporter:
         y: 0
         width: 14
         height: 15
-      spriteId: 26dc0c0bb14bd044ea16f040a2ed16d8
-    - name: monster_goblin_Frame_4
-      frameIndex: 4
-      cellRect:
-        x: 0
-        y: 0
-        width: 14
-        height: 16
-      spriteId: a674ac3eef3bbe94d80aa366e40c7979
-    - name: monster_goblin_Frame_6
-      frameIndex: 6
-      cellRect:
-        x: 0
-        y: 0
-        width: 14
-        height: 14
-      spriteId: f9f547b1391de694b87376848f46997e
-    - name: monster_goblin_Frame_7
-      frameIndex: 7
-      cellRect:
-        x: 0
-        y: 0
-        width: 14
-        height: 15
-      spriteId: 0494cdc9bc61b3340b72e0af5254446b
+      spriteId: 4df3fd85d25584e4bafa8d76777a64d3
     linkedCells: []
     parentIndex: -1
   platformSettings:

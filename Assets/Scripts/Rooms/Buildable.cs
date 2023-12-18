@@ -11,13 +11,13 @@ public class Buildable : MonoBehaviour, ISpawnable {
 
 	[Readonly] public RoomCard card;
 	public RoomCardData cardData;
-    [Readonly] private int connectSpotIndex;
-    [Readonly] public bool isBlueprint = true;
-    [Readonly] public Spot targetConnection;
-    [Readonly] public Spot blueprintConnection;
-    [Readonly] public Buildable constructed;
+	[Readonly] private int connectSpotIndex;
+	[Readonly] public bool isBlueprint = true;
+	[Readonly] public Spot targetConnection;
+	[Readonly] public Spot blueprintConnection;
+	[Readonly] public Buildable constructed;
 
-    public virtual void Awake() {
+	public virtual void Awake() {
 		if (this.connectSpotList.Count == 0) {
 			Debug.LogWarning("Buildable missing connection spots");
 		}
@@ -28,12 +28,12 @@ public class Buildable : MonoBehaviour, ISpawnable {
 	}
 
 	public bool HasMultipleSpots() {
-        if (!this.isBlueprint) {
-            Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
-            return false;
-        }
+		if (!this.isBlueprint) {
+			Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
+			return false;
+		}
 
-        return (this.connectSpotList.Count > 1);
+		return (this.connectSpotList.Count > 1);
 	}
 
 	public void SetSpotVisibility(bool state) {
@@ -48,12 +48,12 @@ public class Buildable : MonoBehaviour, ISpawnable {
 	}
 
 	public void UseNextSpot() {
-        if (!this.isBlueprint) {
-            Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
-            return;
-        }
+		if (!this.isBlueprint) {
+			Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
+			return;
+		}
 
-        if (this.connectSpotList.Count - 1 <= this.connectSpotIndex) {
+		if (this.connectSpotList.Count - 1 <= this.connectSpotIndex) {
 			this.connectSpotIndex = 0;
 		}
 		else {
@@ -62,12 +62,12 @@ public class Buildable : MonoBehaviour, ISpawnable {
 	}
 
 	public void UsePreviousSpot() {
-        if (!this.isBlueprint) {
-            Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
-            return;
-        }
+		if (!this.isBlueprint) {
+			Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
+			return;
+		}
 
-        if (this.connectSpotList.Count - 1 < this.connectSpotIndex) {
+		if (this.connectSpotList.Count - 1 < this.connectSpotIndex) {
 			this.connectSpotIndex = 0;
 		}
 		else if (this.connectSpotIndex <= 0) {
@@ -79,12 +79,12 @@ public class Buildable : MonoBehaviour, ISpawnable {
 	}
 
 	public Spot GetBuildSpot(int index) {
-        if (this.isBlueprint) {
-            Debug.LogWarning("Do not work on the blueprint; work on a construction.");
-            return null;
-        }
+		if (this.isBlueprint) {
+			Debug.LogWarning("Do not work on the blueprint; work on a construction.");
+			return null;
+		}
 
-        if (this.connectSpotList.Count - 1 < index) {
+		if (this.connectSpotList.Count - 1 < index) {
 			Debug.LogWarning($"index exceeded number of spots; {index}");
 			return this.connectSpotList[0];
 		}
@@ -101,28 +101,28 @@ public class Buildable : MonoBehaviour, ISpawnable {
 		this.cardData = cardData;
 		this.connectSpotIndex = 0;
 		this.UnloadBlueprint();
-    }
+	}
 
 	public virtual bool IsPlacementAcceptable() {
-        if (this.isBlueprint) {
-            Debug.LogWarning("Do not work on the blueprint; work on a construction.");
-            return false;
-        }
+		if (this.isBlueprint) {
+			Debug.LogWarning("Do not work on the blueprint; work on a construction.");
+			return false;
+		}
 
-        return true;
-    }
+		return true;
+	}
 
 	public virtual void OnDespawn(object spawner) { }
 
 	public virtual void OnSpawn(object spawner) { }
 
 	public virtual bool ShowBlueprint(Spot targetConnection) {
-        if (!this.isBlueprint) {
-            Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
-            return false;
-        }
+		if (!this.isBlueprint) {
+			Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
+			return false;
+		}
 
-        this.targetConnection = targetConnection;
+		this.targetConnection = targetConnection;
 
 		// Be sure to work on the constructed buildable- not on the blueprint
 		if (this.constructed == null) {
@@ -131,54 +131,54 @@ public class Buildable : MonoBehaviour, ISpawnable {
 			this.constructed.isBlueprint = false;
 		}
 
-        this.blueprintConnection = this.constructed.GetBuildSpot(this.connectSpotIndex);
+		this.blueprintConnection = this.constructed.GetBuildSpot(this.connectSpotIndex);
 
-        // Hide connect spots
-        this.constructed.SetSpotVisibility(false);
-        this.targetConnection.SetVisibility(false);
+		// Hide connect spots
+		this.constructed.SetSpotVisibility(false);
+		this.targetConnection.SetVisibility(false);
 
-        // Line up rotation
-        this.constructed.transform.rotation = Quaternion.identity;
-        Quaternion targetRotation = this.targetConnection.GetRotation() * Quaternion.Inverse(this.blueprintConnection.GetRotation());
-        this.constructed.transform.rotation = Quaternion.Euler(0, 0, targetRotation.eulerAngles.z + 180);
+		// Line up rotation
+		this.constructed.transform.rotation = Quaternion.identity;
+		Quaternion targetRotation = this.targetConnection.GetRotation() * Quaternion.Inverse(this.blueprintConnection.GetRotation());
+		this.constructed.transform.rotation = Quaternion.Euler(0, 0, targetRotation.eulerAngles.z + 180);
 
-        // Line up position
-        this.constructed.transform.position += this.targetConnection.GetPosition() - this.blueprintConnection.GetPosition();
+		// Line up position
+		this.constructed.transform.position += this.targetConnection.GetPosition() - this.blueprintConnection.GetPosition();
 
-        return this.constructed.IsPlacementAcceptable();
-    }
+		return this.constructed.IsPlacementAcceptable();
+	}
 
 	public virtual void UnloadBlueprint() {
-        if (!this.isBlueprint) {
-            Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
-            return;
-        }
+		if (!this.isBlueprint) {
+			Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
+			return;
+		}
 
-        if (this.targetConnection != null) {
-            this.targetConnection.SetVisibility(true);
-        }
+		if (this.targetConnection != null) {
+			this.targetConnection.SetVisibility(true);
+		}
 
 		if (this.constructed != null) {
 			Destroy(this.constructed.gameObject);
 			this.constructed = null;
 
-            // TODO: Spawn teleport lines
-        }
-    }
+			// TODO: Spawn teleport lines
+		}
+	}
 
-    public virtual void BuildBlueprint() {
-        if (!this.isBlueprint) {
-            Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
-            return;
-        }
+	public virtual void BuildBlueprint() {
+		if (!this.isBlueprint) {
+			Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
+			return;
+		}
 
-        this.targetConnection.MarkUsed();
-        this.blueprintConnection.MarkUsed();
-        this.constructed.SetSpotVisibility(true);
+		this.targetConnection.MarkUsed();
+		this.blueprintConnection.MarkUsed();
+		this.constructed.SetSpotVisibility(true);
 		this.constructed.enabled = false; // Turn off the Buildable Script now that it is built
 		this.constructed = null;
 
-        // TODO: Spawn dust particles
-        // TODO: Change transparency or something to be solid
-    }
+		// TODO: Spawn dust particles
+		// TODO: Change transparency or something to be solid
+	}
 }

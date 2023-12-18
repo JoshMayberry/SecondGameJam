@@ -502,6 +502,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: CardTemplate_15
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 80
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea87af18763f50248a9db0220d5f6e19
+      internalID: -1540019583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardTemplate_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 80
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1225e0455f0f0de4fb17d6d78569e691
+      internalID: -484275645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardTemplate_17
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 0
+        width: 80
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98fe86b8b34889945822f7a3bd48fe01
+      internalID: -1993130100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -520,6 +583,9 @@ TextureImporter:
       CardTemplate_12: 4285030085138947076
       CardTemplate_13: -6003594548577529567
       CardTemplate_14: -2924773151829897135
+      CardTemplate_15: -1540019583
+      CardTemplate_16: -484275645
+      CardTemplate_17: -1993130100
       CardTemplate_2: 5817589384847550592
       CardTemplate_3: -8135582131814928150
       CardTemplate_4: -7714688875834373912
