@@ -50,9 +50,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1a3afa64c20c640a6612571251b455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
+  currentVisitProgress: 0
   aiPath: {fileID: 6956866986634490952}
   aiDestinationSetter: {fileID: 1612471044643519813}
-  type: 1
+  venueList: []
+  currentDestinationIndex: -1
+  destinationLimit: 3
+  checkCooldown: 1
+  timeEnter: 0
+  timeExit: 0
+  lootGained: []
+  monstersFought: []
+  gravesSeen:
+    _serializedList: []
+  roomsVisited:
+    _serializedList: []
+  venueTimeFallback: 4
+  scoreMultiplierFallback: 2
+  interestExpectations:
+    _serializedList: []
+  health: 0
 --- !u!114 &2745674251672177215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +115,7 @@ MonoBehaviour:
   radius: 0.33
   height: 0.1
   canMove: 1
-  maxSpeed: 0.5
+  maxSpeed: 2.04
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -117,7 +135,7 @@ MonoBehaviour:
   maxAcceleration: -2.5
   rotationSpeed: 360
   slowdownDistance: 1.5
-  pickNextWaypointDist: 0.6
+  pickNextWaypointDist: 0.28
   endReachedDistance: 0.2
   alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
@@ -156,10 +174,10 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 60b9635e24b4b284994017f63327ab62, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 6144
   m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1
@@ -177,10 +195,10 @@ CircleCollider2D:
   m_Material: {fileID: 6200000, guid: 60b9635e24b4b284994017f63327ab62, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 6144
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -194,12 +212,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.2923112
+  m_Radius: 1
 --- !u!1001 &844610667173613268
 PrefabInstance:
   m_ObjectHideFlags: 0

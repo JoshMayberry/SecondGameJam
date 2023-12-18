@@ -10,7 +10,7 @@ public class Buildable : MonoBehaviour, ISpawnable {
 	[SerializeField] public List<Spot> connectSpotList = new List<Spot>();
 
 	[Readonly] public RoomCard card;
-	 public RoomCardData cardData;
+	public RoomCardData cardData;
     [Readonly] private int connectSpotIndex;
     [Readonly] public bool isBlueprint = true;
     [Readonly] public Spot targetConnection;

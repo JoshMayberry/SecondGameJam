@@ -33,17 +33,17 @@ public class Room : Buildable {
     }
 
     public override bool IsPlacementAcceptable() {
-        if (!base.IsPlacementAcceptable()) {
-            return false;
-        }
+        //if (!base.IsPlacementAcceptable()) {
+        //    return false;
+        //}
 
-        if (!this.detectIfEnoughSpace()) {
-            return false;
-        }
+        ////if (!this.detectIfEnoughSpace()) {
+        ////    return false;
+        ////}
 
-        if (!this.detectIfNoBlockedExits()) {
-            return false;
-        }
+        //if (!this.detectIfNoBlockedExits()) {
+        //    return false;
+        //}
 
         return true;
     }
@@ -91,5 +91,16 @@ public class Room : Buildable {
             }
         }
         return true;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        switch (other.tag) {
+            case "Hero":
+                Hero hero = other.GetComponent<Hero>();
+                if (hero != null) {
+                    hero.EnteredRoom(this);
+                }
+                break;
+        }
     }
 }

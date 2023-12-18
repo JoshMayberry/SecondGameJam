@@ -36,14 +36,14 @@
         "com.unity.postprocessing": "3.2.2",
         "com.unity.cinemachine": "2.9.7"
       },
-      "hash": "e9e9f34e9ec000939c2654664452d50e6567282e"
+      "hash": "b84fcf7fd711bded3b2e611c9c1c58b0e0363ad1"
     },
     "com.jmayberry.spawner": {
       "version": "git@github.com:JoshMayberry/Spawner.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "a11fe63cd1e584c1045921fb4e40643b5f03641f"
+      "hash": "ff2cef1dc113f23e5b31d21ecf614194d4906ef3"
     },
     "com.unity.2d.animation": {
       "version": "10.0.2",

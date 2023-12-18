@@ -22,8 +22,10 @@ public class RoomManager : MonoBehaviour {
 	[Required] public Button construction_uiCancel;
 	[Required] public Button construction_uiRotateClockwise;
 	[Required] public Button construction_uiRotateCounterClockwise;
+    [Required] public Transform gameBoundary;
+    [Required] public Grave gravePrefab;
 
-	private int spotConnectLayer;
+    private int spotConnectLayer;
 	private int spotMonsterLayer;
 	private int spotLootLayer;
 
@@ -69,11 +71,13 @@ public class RoomManager : MonoBehaviour {
 		SetLayerVisibility(this.spotLootLayer, this.currentConstructMode == ConstructMode.Loot);
 
 		var canConstruct = (this.currentConstructMode != ConstructMode.Nothing);
+		this.gameBoundary.gameObject.SetActive(canConstruct);
 		this.construction_uiBuild.gameObject.SetActive(canConstruct);
-		this.construction_uiCancel.gameObject.SetActive(canConstruct);
+        this.construction_uiCancel.gameObject.SetActive(canConstruct);
 		this.construction_uiRotateClockwise.gameObject.SetActive(canConstruct);
 		this.construction_uiRotateCounterClockwise.gameObject.SetActive(canConstruct);
-		if (!canConstruct) {
+
+        if (!canConstruct) {
 			if (this.currentTargetConnection != null) {
 				this.currentTargetConnection.SetVisibility(true);
 			}
@@ -125,7 +129,11 @@ public class RoomManager : MonoBehaviour {
 		this.currentBlueprint = null;
 		this.currentTargetConnection = null;
 
-		RoomCardManager.instanceApplied.selectedCard.PlayCard();
+		if (this.currentConstructMode == ConstructMode.Room) {
+            AstarPath.active.Scan();
+        }
+
+        RoomCardManager.instanceApplied.selectedCard.PlayCard();
 	}
 
 	public void OnBlueprint_Cancel() {
