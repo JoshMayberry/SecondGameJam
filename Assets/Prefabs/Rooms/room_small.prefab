@@ -102,7 +102,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.000000029802322}
+  m_Offset: {x: 0, y: 0.00000011920929}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -112,7 +112,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4908574, y: 1.4908574}
+  m_Size: {x: 2.4336033, y: 2.4650285}
   m_EdgeRadius: 0
 --- !u!1 &8385742280850239064
 GameObject:
@@ -312,7 +312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5584390622706841139, guid: e5b2cd73817f53543b93574b0456b969, type: 3}
       propertyPath: m_Name
-      value: LootSpot W
+      value: small_LootSpot W
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -374,7 +374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5584390622706841139, guid: f8bf8341762aa6f4ab91351265cc4a97, type: 3}
       propertyPath: m_Name
-      value: UpgradeSpot
+      value: small_UpgradeSpot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -451,7 +451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5584390622706841139, guid: b15fb125abd163545ae72d02f5355025, type: 3}
       propertyPath: m_Name
-      value: ConnectSpot W
+      value: small_ConnectSpot W
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

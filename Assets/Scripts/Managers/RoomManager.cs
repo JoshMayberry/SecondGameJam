@@ -131,7 +131,6 @@ public class RoomManager : MonoBehaviour {
 
 	public void OnBlueprint_Build() {
 		this.SetErrorMessage("");
-		this.construction_uiNewGame.gameObject.SetActive(true);
 
         switch (this.currentConstructMode) {
             case ConstructMode.Room:
@@ -155,7 +154,9 @@ public class RoomManager : MonoBehaviour {
 			AstarPath.active.Scan();
 		}
 
-		RoomCardManager.instanceApplied.selectedCard.PlayCard();
+		HeroWaveManager.instance.UpdateSpawnRate();
+		this.construction_uiNewGame.gameObject.SetActive(true);
+        RoomCardManager.instanceApplied.selectedCard.PlayCard();
 	}
 
 	public void OnBlueprint_Cancel() {

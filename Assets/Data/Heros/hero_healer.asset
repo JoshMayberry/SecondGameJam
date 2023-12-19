@@ -17,7 +17,8 @@ MonoBehaviour:
   type: 1
   health: 5
   speed: 2
-  destinationLimit: 3
+  destinationMinimum: 3
+  destinationMaximum: 10
   expectation:
     _serializedList:
     - Key: 0
@@ -47,7 +48,7 @@ MonoBehaviour:
         scoreNegative: 0
     - Key: 5
       Value:
-        expValue: 8
+        expValue: 1
         scorePositive: 4
         scoreNegative: 8
     - Key: 6

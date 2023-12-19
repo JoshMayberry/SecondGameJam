@@ -44,9 +44,9 @@ public class Room : Buildable {
 			return false;
 		}
 
-		if (!this.detectIfEnoughSpace()) {
-			return false;
-		}
+		//if (!this.detectIfEnoughSpace()) {
+		//	return false;
+		//}
 
 		if (!this.detectIfNoBlockedExits()) {
 			return false;
@@ -55,6 +55,7 @@ public class Room : Buildable {
 		return true;
 	}
 
+	// TODO: This is not detecting the connection spot of an adjacent room
 	private bool detectIfEnoughSpace() {
 		if (myCollider == null) {
 			Debug.LogWarning("No Collider2D found on the object");
@@ -62,25 +63,30 @@ public class Room : Buildable {
 		}
 
 		Bounds bounds = myCollider.bounds;
-		Vector2 size = bounds.size;
-		Vector2 position = bounds.center;
-
-		Collider2D[] otherColliderList = Physics2D.OverlapBoxAll(position, size, myCollider.transform.eulerAngles.z);
+		Collider2D[] otherColliderList = Physics2D.OverlapBoxAll(bounds.center, bounds.size, myCollider.transform.eulerAngles.z);
 		foreach (var otherCollider in otherColliderList) {
-			if ((otherCollider != null) && (otherCollider.gameObject != this.gameObject)) {
-				bool notAChild = false;
-				foreach (Transform childTransform in this.transform) {
-					if (childTransform.gameObject == otherCollider.gameObject) {
-						notAChild = true;
-                    }
-				}
-				if (notAChild) {
-					continue;
-				}
-
-				RoomManager.instance.SetErrorMessage($"In Way: {otherCollider.gameObject.name}");
-				return false;
+			if (otherCollider == null) {
+				continue;
 			}
+
+			if (otherCollider.gameObject == this.gameObject) {
+				continue;
+            }
+
+            bool notAChild = false;
+			foreach (Transform childTransform in this.transform) {
+                if (childTransform.gameObject == otherCollider.gameObject) {
+					notAChild = true;
+					break;
+                }
+			}
+
+			if (notAChild) {
+				continue;
+            }
+
+			RoomManager.instance.SetErrorMessage($"In Way: {otherCollider.gameObject.name}");
+			return false;
 		}
 
 		return true;

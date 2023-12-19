@@ -8,8 +8,6 @@ using Pathfinding;
 using jmayberry.Spawner;
 using jmayberry.CustomAttributes;
 using AYellowpaper.SerializedCollections;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEditor;
 
 public enum HeroType {
 	Unknown,
@@ -43,7 +41,7 @@ public class Hero : MonoBehaviour, ISpawnable {
 	public HeroJournal journal = new HeroJournal();
 
 	[Header("Setup")]
-	[SerializedDictionary("Hero Type", "Sprite")] public SerializedDictionary<HeroType, GameObject> possibleSprites;
+	[SerializedDictionary("Hero Type", "Sprite")] public SerializedDictionary<HeroType, SpriteRenderer> possibleSprites;
 	[Required] [SerializeField] private AIPath aiPath;
 	[Required] [SerializeField] private AIDestinationSetter aiDestinationSetter;
 	[SerializeField] private float checkCooldown = 0.25f;
@@ -51,7 +49,12 @@ public class Hero : MonoBehaviour, ISpawnable {
 	private Vector3 initialScale;
 	private float health;
 
-	[Header("Debugging")]
+    public SpriteRenderer sprite_mage;
+    public SpriteRenderer sprite_healer;
+    public SpriteRenderer sprite_fighter;
+    public SpriteRenderer sprite_swordsman;
+
+    [Header("Debugging")]
 	[Readonly] [SerializeField] private List<Venue> venueList = new List<Venue>();
 	[Readonly] [SerializeField] private int currentDestinationIndex = -1;
 	[Readonly] [SerializeField] internal UnitySpawner<Hero> spawner;
@@ -65,9 +68,10 @@ public class Hero : MonoBehaviour, ISpawnable {
 		this.initialScale = this.transform.localScale;
 	}
 
-	public void OnSpawn(object spawner) {}
+	public void OnSpawn(object spawner) {
+    }
 
-	public void SetData(HeroData heroData) {
+    public void SetData(HeroData heroData) {
 		this.heroData = heroData;
 		this.health = heroData.health;
 		this.timeEnter = 0;
@@ -75,14 +79,28 @@ public class Hero : MonoBehaviour, ISpawnable {
 		this.timeSpent = 0;
 		this.journal.Clear();
 		this.currentDestinationIndex = -1;
+    }
 
-		foreach (var item in this.possibleSprites) {
-			item.Value.SetActive(item.Key == this.heroData.type);
-		}
-	}
+    internal void UpdateSprite() {
+        Debug.Log($"Updating sprites for {heroData.title}; {this.possibleSprites.Count} are available");
 
-	internal void PlanVisits() {
-		var monsterSpots = RoomManager.instance.builtMonsterList;
+        foreach (var item in this.possibleSprites) {
+            item.Value.gameObject.SetActive(item.Key == heroData.type);
+        }
+
+        // Bug Patch: Not sure why, but the WebGL version does not hold the `possibleSprites` reference correctly.
+        if (this.possibleSprites.Count == 0) {
+            this.sprite_mage.gameObject.SetActive(HeroType.Mage_Black == heroData.type);
+            this.sprite_healer.gameObject.SetActive(HeroType.Mage_White == heroData.type);
+            this.sprite_fighter.gameObject.SetActive(HeroType.Fighter_Fists == heroData.type);
+            this.sprite_swordsman.gameObject.SetActive(HeroType.Fighter_Sword == heroData.type);
+        }
+    }
+
+    internal void PlanVisits() {
+        this.UpdateSprite();
+
+        var monsterSpots = RoomManager.instance.builtMonsterList;
 		var lootSpots = RoomManager.instance.builtLootList;
 
 		var possibleVenueList = new List<Venue>();
@@ -93,15 +111,21 @@ public class Hero : MonoBehaviour, ISpawnable {
 			possibleVenueList.Add(new Venue { buildable = loot, heroExpectationCatalogue = loot.cardData.roomProvides });
 		}
 
-		this.venueList = possibleVenueList.OrderByDescending(venue => (int)Math.Round(
-			this.getScore(venue.heroExpectationCatalogue, HeroExpectationType.MonsterBattle) + 
-			this.getScore(venue.heroExpectationCatalogue, HeroExpectationType.LootGained) + 
-			this.getScore(venue.heroExpectationCatalogue, HeroExpectationType.TimeSpentMin) + // If it is expected to be quick
-			this.getScore(venue.heroExpectationCatalogue, HeroExpectationType.TimeSpentMax) + // If it is expected to be long
-			this.getScore(venue.heroExpectationCatalogue, HeroExpectationType.HpCost) +
-			this.getScore(venue.heroExpectationCatalogue, HeroExpectationType.HpLeft)
-		))
-			.Take(this.heroData.destinationLimit)
+        float destinationCount = this.heroData.destinationMinimum;
+        destinationCount += (RoomManager.instance.builtMonsterList.Count + RoomManager.instance.builtLootList.Count) / 3;
+        destinationCount += RoomManager.instance.builtRoomList.Count / 5;
+        Debug.Log($"Getting {destinationCount} venues");
+
+        this.venueList = possibleVenueList.OrderByDescending(venue => UnityEngine.Random.Range(0, 1000)) // Just shuffle them for now instead
+  //          venue => (int)Math.Round(
+		//	this.getScore(venue.heroExpectationCatalogue, HeroExpectationType.MonsterBattle) + 
+		//	this.getScore(venue.heroExpectationCatalogue, HeroExpectationType.LootGained) + 
+		//	this.getScore(venue.heroExpectationCatalogue, HeroExpectationType.TimeSpentMin) + // If it is expected to be quick
+		//	this.getScore(venue.heroExpectationCatalogue, HeroExpectationType.TimeSpentMax) + // If it is expected to be long
+		//	this.getScore(venue.heroExpectationCatalogue, HeroExpectationType.HpCost) +
+		//	this.getScore(venue.heroExpectationCatalogue, HeroExpectationType.HpLeft)
+		//))
+			.Take((int)Math.Floor(destinationCount))
 			.ToList();
 
 		this.timeEnter = Time.time;

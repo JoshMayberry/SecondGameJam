@@ -45,4 +45,12 @@ public class HeroWaveManager : WaveManagerBase<Hero, HeroWave> {
 	internal void SpawnGrave(Transform location) {
 		this.graveSpawner.Spawn(location);
 	}
+
+	public void UpdateSpawnRate() {
+        float spawnRate = 15;
+        spawnRate -= (RoomManager.instance.builtMonsterList.Count + RoomManager.instance.builtLootList.Count) / 3;
+        spawnRate -= RoomManager.instance.builtRoomList.Count / 5;
+
+		this.currentWave.timeBetweenSpawns = Math.Clamp(spawnRate, 4, 15);
+    }
 }

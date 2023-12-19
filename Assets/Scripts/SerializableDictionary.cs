@@ -1,8 +1,3 @@
-using AYellowpaper.SerializedCollections;
-using System;
-using UnityEditor.PackageManager;
-using UnityEngine;
-
 namespace jmayberry.SerializableDictionary {
     //public partial class SerializableDictionary<TKey, TValue> : SerializedDictionary<TKey, TValue>, ISerializationCallbackReceiver {
     //    public void IncrementValue(TKey key, TValue amount) {

@@ -18,7 +18,8 @@ public class HeroData : ScriptableObject {
 	[Required] public HeroType type;
 	[Required] public float health = 5;
 	[Required] public float speed = 2;
-	[SerializeField] public int destinationLimit = 3;
-	[SerializedDictionary("Type", "Expectation")] public SerializedDictionary<HeroExpectationType, HeroExpectation> expectation;
+	[SerializeField] public int destinationMinimum = 3;
+	[SerializeField] public int destinationMaximum = 10;
+    [SerializedDictionary("Type", "Expectation")] public SerializedDictionary<HeroExpectationType, HeroExpectation> expectation;
 
 }
