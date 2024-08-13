@@ -24,6 +24,7 @@ MonoBehaviour:
   effectType: 0
   cardType: 5
   blueprint: {fileID: 1505695546709532906, guid: 95460a4ff6a75f54793a581cd9a59291, type: 3}
+  uiHead: {fileID: -1988934270, guid: f6d8089d6c40c6941ae42f96869cfc6d, type: 3}
   roomProvides:
     _serializedList:
     - Key: 2
@@ -31,5 +32,8 @@ MonoBehaviour:
         expValue: 3
         scorePositive: 0
         scoreNegative: 0
+  minTime: 0
+  maxTime: 0
+  rechargeTime: 0
   attackDamage: 1
   level: 1

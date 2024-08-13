@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,13 +7,15 @@ using jmayberry.CustomAttributes;
 
 // TODO: Split construction functions and Buildable functions into separate files? Prefabs would need both...
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Buildable : MonoBehaviour, ISpawnable {
 	[SerializeField] public List<Spot> connectSpotList = new List<Spot>();
 	[SerializeField] public List<Spot> upgradeSpotList = new List<Spot>();
     [SerializeField] public List<Sprite> upgradeSprites = new List<Sprite>();
 	[Required][SerializeField] private SpriteRenderer spriteRenderer;
+	public float fallbackRechargeTime = 5f;
 
-    [Readonly] public RoomCard card;
+	[Readonly] public RoomCard card;
 	public RoomCardData cardData;
 	[Readonly] private int upgradeIndex = 0;
 	[Readonly] private int connectSpotIndex;
@@ -21,8 +24,13 @@ public class Buildable : MonoBehaviour, ISpawnable {
 	[Readonly] public Spot blueprintConnection;
 	[Readonly] public Buildable constructed;
 	[Readonly] public Buildable blueprintBuildingMe;
+	[Readonly] public UiInfo uiInfo;
 
-    public virtual void Awake() {
+
+	public virtual void Awake() {
+		this.spriteRenderer = this.GetComponent<SpriteRenderer>();
+		this.spriteRenderer.material = new Material(this.spriteRenderer.material); // Keep the materials each buildable uses separate from each other.
+
 		if (this.connectSpotList.Count == 0) {
 			Debug.LogWarning("Buildable missing connection spots");
         }
@@ -36,9 +44,10 @@ public class Buildable : MonoBehaviour, ISpawnable {
         }
 
 		this.UpdateSprite();
-    }
+		this.UpdateSpriteEffect_ResetAll();
+	}
 
-    public bool HasMultipleSpots() {
+	public bool HasMultipleSpots() {
 		if (!this.isBlueprint) {
 			Debug.LogWarning("Do not plan using a construction; plan using a blueprint.");
 			return false;
@@ -125,7 +134,9 @@ public class Buildable : MonoBehaviour, ISpawnable {
 
 	public virtual void OnDespawn(object spawner) { }
 
-	public virtual void OnSpawn(object spawner) { }
+	public virtual void OnSpawn(object spawner) {
+		this.UpdateSpriteEffect_ResetAll();
+	}
 
 	public virtual bool ShowBlueprint(Spot targetConnection) {
 		if (!this.isBlueprint) {
@@ -185,17 +196,23 @@ public class Buildable : MonoBehaviour, ISpawnable {
 			return;
 		}
 
+		if (this.uiInfo != null) {
+			UiManager.instance.DespawnBuildableInfo(this);
+		}
+
 		this.targetConnection.MarkUsed();
 		this.blueprintConnection.MarkUsed();
 		this.constructed.SetSpotVisibility(true);
 		this.constructed.enabled = false; // Turn off the Buildable Script now that it is built
 		this.constructed = null;
 
-        // TODO: Spawn dust particles
-        // TODO: Change transparency or something to be solid
-    }
+		// TODO: Spawn dust particles
+		// TODO: Change transparency or something to be solid
 
-    public void DoUpgrade(Spot spot) {
+		UiManager.instance.SpawnBuildableInfo(this);
+	}
+
+	public void DoUpgrade(Spot spot) {
         spot.MarkUsed();
 
 		this.upgradeIndex++;
@@ -207,4 +224,24 @@ public class Buildable : MonoBehaviour, ISpawnable {
             this.spriteRenderer.sprite = this.upgradeSprites[this.upgradeIndex];
         }
     }
+
+	internal void IsUsed(Hero hero) {
+		StartCoroutine(this.IsUsedCoroutine());
+	}
+
+	// The hero has finished using this venue- so it needs to recharge/respawn.
+	public IEnumerator IsUsedCoroutine() {
+		var oldTag = this.gameObject.tag;
+		var rechargeTime = this.cardData.rechargeTime > 0 ? this.cardData.rechargeTime : this.fallbackRechargeTime;
+
+		this.gameObject.tag = "VenueRecharging";
+		this.spriteRenderer.material.SetFloat("_HologramFade", 1);
+		yield return new WaitForSeconds(rechargeTime);
+		this.spriteRenderer.material.SetFloat("_HologramFade", 0);
+		this.gameObject.tag = oldTag;
+	}
+
+	public void UpdateSpriteEffect_ResetAll() {
+		this.spriteRenderer.material.SetFloat("_HologramFade", 0);
+	}
 }

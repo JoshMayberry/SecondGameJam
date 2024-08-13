@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using jmayberry.CustomAttributes;
 using jmayberry.CardDeck;
 using TMPro;
+using System;
 
 public enum ConstructMode {
 	Nothing,
@@ -12,6 +13,14 @@ public enum ConstructMode {
 	Monster,
 	Loot,
 	Effect,
+}
+
+public enum DungeonState {
+	Open,
+	Closed,
+	Broken,
+	TutorialOpen,
+	TutorialClosed,
 }
 
 // TODO: Rename to 'BuildManager'
@@ -36,13 +45,13 @@ public class RoomManager : MonoBehaviour {
     [Readonly] public ConstructMode currentConstructMode;
 	[Readonly] public int rotationIndex;
 	[Readonly] public Buildable currentBlueprint;
+	[Readonly] public DungeonState currentDungeonState = DungeonState.Open;
 	[Readonly] public Spot currentTargetConnection;
 	//[SerializedDictionary("Construction Type", "Amount")] public SerializedDictionary<ConstructMode, List<Buildable>> heroInterest = new SerializedDictionary<ConstructMode, List<Buildable>>();
 
 	[Readonly] public List<Room> builtRoomList = new List<Room>();
 	[Readonly] public List<Monster> builtMonsterList = new List<Monster>();
 	[Readonly] public List<Loot> builtLootList = new List<Loot>();
-
 
 	public static RoomManager instance { get; private set; }
 	public void Awake() {
@@ -278,5 +287,10 @@ public class RoomManager : MonoBehaviour {
 				Debug.LogError($"Unknown effect '{cardData.effectType}' on {cardData.title}");
 				break;
 		}
+	}
+
+	internal void SetDungeonState(DungeonState dungeonState) {
+		this.currentDungeonState = dungeonState;
+		// TODO: Animate an open sign in front
 	}
 }

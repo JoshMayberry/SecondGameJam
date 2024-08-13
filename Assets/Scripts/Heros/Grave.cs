@@ -16,16 +16,16 @@ public class Grave : MonoBehaviour, ISpawnable {
 		Destroy(this.gameObject);
 	}
 
-	private void OnTriggerEnter(Collider other) {
-		switch (other.tag) {
-			case "Hero":
-				Hero hero = other.GetComponent<Hero>();
-				if (hero != null) {
-					hero.SeeGrave(this.heroType);
-				}
-				break;
-		}
-	}
+	//private void OnTriggerEnter(Collider other) {
+	//	switch (other.tag) {
+	//		case "Hero":
+	//			Hero hero = other.GetComponent<Hero>();
+	//			if (hero != null) {
+	//				hero.SeeGrave(this.heroType);
+	//			}
+	//			break;
+	//	}
+	//}
 
 	public void OnSpawn(object spawner) {
 	}

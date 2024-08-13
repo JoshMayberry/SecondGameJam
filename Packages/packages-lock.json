@@ -19,7 +19,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "edc096e12eae64fe1a021440b6b21440cc635501"
+      "hash": "f8a269ddbf940af96e3bc28b081e9f9c050cf2e9"
     },
     "com.jmayberry.customattributes": {
       "version": "git@github.com:JoshMayberry/CustomAttributes.git",
@@ -27,6 +27,13 @@
       "source": "git",
       "dependencies": {},
       "hash": "1ee8beb27cb2d67a698a8aefdc4eff1bd05274c5"
+    },
+    "com.jmayberry.eventsequencer": {
+      "version": "git@github.com:JoshMayberry/EventSequencer.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5341f1a313030e2b58c7b1540cf6a96fbbacb221"
     },
     "com.jmayberry.generalinfrastructure": {
       "version": "git@github.com:JoshMayberry/GeneralInfrastructure.git",
@@ -36,14 +43,36 @@
         "com.unity.postprocessing": "3.2.2",
         "com.unity.cinemachine": "2.9.7"
       },
-      "hash": "b84fcf7fd711bded3b2e611c9c1c58b0e0363ad1"
+      "hash": "8a7b0a470c1636c65b879e31c0d8c2a121116190"
+    },
+    "com.jmayberry.loadingscreen": {
+      "version": "git@github.com:JoshMayberry/LoadingScreen.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.jmayberry.customattributes": "git@github.com:JoshMayberry/CustomAttributes.git"
+      },
+      "hash": "6a34d0f3209c516161bb4eb50e8483ed40ae28b4"
     },
     "com.jmayberry.spawner": {
       "version": "git@github.com:JoshMayberry/Spawner.git",
       "depth": 0,
       "source": "git",
-      "dependencies": {},
-      "hash": "ff2cef1dc113f23e5b31d21ecf614194d4906ef3"
+      "dependencies": {
+        "com.unity.splines": "2.3.0"
+      },
+      "hash": "52f98b369a2313ef510fd5bce88631382d3844dc"
+    },
+    "com.jmayberry.typewriterhelper": {
+      "version": "git@github.com:JoshMayberry/TypewriterHelper.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.aarthificial.typewriter": "1.2.0",
+        "com.unity.textmeshpro": "3.0.6",
+        "ayellowpaper.serialized-dictionary": "1.0.0"
+      },
+      "hash": "baa42902a3fd900748db11ca9b63a7258310eb40"
     },
     "com.unity.2d.animation": {
       "version": "10.0.2",

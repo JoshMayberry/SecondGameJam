@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e5a1f832954a510429d4ddb738e353f2
+guid: 9f304900e44244d41ad2ba6129da08f9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,7 +121,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: BannerArt
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -130,7 +130,7 @@ ScriptedImporter:
       y: 4
       width: 400
       height: 80
-    spriteID: b975d112dee59464fb8ecaf1cbc9b7c8
+    spriteID: 8685be25b53fd0841b7813d46e12bddc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -155,7 +155,7 @@ ScriptedImporter:
         y: 0
         width: 400
         height: 80
-      spriteId: b975d112dee59464fb8ecaf1cbc9b7c8
+      spriteId: 8685be25b53fd0841b7813d46e12bddc
     linkedCells: []
     parentIndex: -1
   platformSettings: []

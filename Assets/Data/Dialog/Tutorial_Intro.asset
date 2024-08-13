@@ -1,0 +1,557 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d0878fa1be1f546a2a65661326a877, type: 3}
+  m_Name: Tutorial_Intro
+  m_EditorClassIdentifier: 
+  TableName: Tutorial_Intro
+  Rules:
+  - rid: 1505914887165444148
+  - rid: 1505914887165444168
+  - rid: 1505914887165444110
+  - rid: 1505914887165444121
+  - rid: 1505914887165444122
+  - rid: 1505914887165444129
+  - rid: 1505914887165444137
+  - rid: 1505914887165444138
+  - rid: 1505914887165444149
+  - rid: 1505914887165444150
+  - rid: 1505914887165444151
+  - rid: 1505914887165444160
+  - rid: 1505914887165444152
+  - rid: 1505914887165444153
+  - rid: 1505914887165444154
+  - rid: 1505914887165444155
+  - rid: 1505914887165444156
+  - rid: 1505914887165444157
+  - rid: 1505914887165444158
+  - rid: 1505914887165444159
+  Facts: []
+  Events:
+  - rid: 1505914887165444111
+  references:
+    version: 2
+    RefIds:
+    - rid: 1505914887165444110
+      type: {class: MyActionEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303374
+        Key: hero_enterDungeon
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303389
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        action: 1
+        ActionNumber: 0
+        ActionText: 
+    - rid: 1505914887165444111
+      type: {class: EventEntry, ns: Aarthificial.Typewriter.Entries, asm: Aarthificial.Typewriter}
+      data:
+        ID: 303375
+        Key: OnTutorialIntro
+        Scope:
+          InternalID: 0
+        Triggers:
+          List: []
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+    - rid: 1505914887165444121
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303379
+        Key: hero_sad
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303374
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 1
+        emotion: 3
+        _speaker:
+          InternalID: 3866878
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - What kind of a dungeon is this!?
+        - There's nothing here...
+        Speed: 1
+        portraitSide: 1
+    - rid: 1505914887165444122
+      type: {class: MyActionEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303380
+        Key: hero_leaveDungeon
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303379
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        action: 2
+        ActionNumber: -10
+        ActionText: Dungeon was completely empty. Don't waste your time here!
+    - rid: 1505914887165444129
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303382
+        Key: demonLord_confused
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303380
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 0
+        _speaker:
+          InternalID: 303383
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - That adventurer sure left quickly. I wonder why he didn't stay longer.
+        Speed: 1
+        portraitSide: 0
+    - rid: 1505914887165444137
+      type: {class: MyActionEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303384
+        Key: enable_review
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303382
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        action: 3
+        ActionNumber: 0
+        ActionText: 'ReviewBoard
+
+          CanvasReview'
+    - rid: 1505914887165444138
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303385
+        Key: tutorial_readReview
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303384
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 1
+        _speaker:
+          InternalID: 303383
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - Looks like they left a us a review. Click on the icon in the top-right
+          to check their review.
+        Speed: 1
+        portraitSide: 0
+    - rid: 1505914887165444148
+      type: {class: MyActionEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303389
+        Key: hero_setType
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303375
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        action: 5
+        ActionNumber: 0
+        ActionText: Fighter
+    - rid: 1505914887165444149
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303390
+        Key: demonLord_upset.1
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303385
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 2
+        emotion: 2
+        _speaker:
+          InternalID: 303383
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - What!?
+        Speed: 1
+        portraitSide: 0
+    - rid: 1505914887165444150
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303391
+        Key: demonLord_upset.2
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303390
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 1
+        emotion: 3
+        _speaker:
+          InternalID: 303383
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - They're not worng though...
+        - ...
+        Speed: 1
+        portraitSide: 0
+    - rid: 1505914887165444151
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303392
+        Key: demonLord_upset.3
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303391
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 0
+        _speaker:
+          InternalID: 303383
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - Ok then. Let's improve the dungeon- an hopefully future reviews won't be
+          as harsh
+        Speed: 1
+        portraitSide: 0
+    - rid: 1505914887165444152
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303393
+        Key: tutorial_drawCards
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303401
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 0
+        _speaker:
+          InternalID: 303383
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - Click on the deck of cards in the bottom right to see what rooms we have
+          to work with.
+        Speed: 1
+        portraitSide: 0
+    - rid: 1505914887165444153
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303394
+        Key: tutorial_selectGoblin
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303393
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 0
+        _speaker:
+          InternalID: 303383
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - Looks like we have a goblin card available. Let's place him in the enterance.
+          First, select the goblin card.
+        Speed: 1
+        portraitSide: 0
+    - rid: 1505914887165444154
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303395
+        Key: tutorial_placeGoblin
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303394
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 0
+        _speaker:
+          InternalID: 303383
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - Good. Now select one of teh 2 build spots that appeared to place the goblin
+          there.
+        Speed: 1
+        portraitSide: 0
+    - rid: 1505914887165444155
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303396
+        Key: tutorial_selectRoom
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303395
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 0
+        _speaker:
+          InternalID: 303383
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - While we're at it- let's expand the dungeon. Select the room card.
+        Speed: 1
+        portraitSide: 0
+    - rid: 1505914887165444156
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303397
+        Key: tutorial_placeRoom
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303396
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 0
+        _speaker:
+          InternalID: 303383
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - Looks like that room won't fit in any of the build spots as it is now.
+        - Click the rotate button to orient the room differently- then place it on
+          a suitable build spot.
+        Speed: 1
+        portraitSide: 0
+    - rid: 1505914887165444157
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303398
+        Key: tutorial_selectLoot
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303397
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 0
+        _speaker:
+          InternalID: 303383
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - And finally- let's place some loot in that room. Heros can't get enough
+          of this stuff. Start by selecting the loot card.
+        Speed: 1
+        portraitSide: 0
+    - rid: 1505914887165444158
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303399
+        Key: tutorial_notEnoughGold.1
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303398
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 3
+        emotion: 3
+        _speaker:
+          InternalID: 303383
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - Umm... Oops...
+        Speed: 1
+        portraitSide: 0
+    - rid: 1505914887165444159
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303400
+        Key: tutorial_notEnoughGold.2
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303399
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 0
+        _speaker:
+          InternalID: 303383
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - Looks like we don't have enough gold to place that yet.
+        - Not a problem. We can let the heros enjoy what we have so far- and place
+          it later.
+        Speed: 1
+        portraitSide: 0
+    - rid: 1505914887165444160
+      type: {class: MyActionEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303401
+        Key: enable_cards
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303392
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        action: 3
+        ActionNumber: 0
+        ActionText: 'RoomCardManager
+
+          CanvasCard
+
+          CanvasConstruction'
+    - rid: 1505914887165444168
+      type: {class: MyActionEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303402
+        Key: set_dungeonState_tutorial
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 303400
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        action: 5
+        ActionNumber: 0
+        ActionText: TutorialOpen

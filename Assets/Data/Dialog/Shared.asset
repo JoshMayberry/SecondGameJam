@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d0878fa1be1f546a2a65661326a877, type: 3}
+  m_Name: Shared
+  m_EditorClassIdentifier: 
+  TableName: Shared
+  Rules:
+  - rid: 1505914887165444141
+  Facts:
+  - rid: 3902770651565129728
+  - rid: 3902770651565129729
+  - rid: 3902770651565129730
+  - rid: 3902770651565129731
+  - rid: 1505914887165444120
+  - rid: 1505914887165444130
+  Events:
+  - rid: 1505914887165444140
+  references:
+    version: 2
+    RefIds:
+    - rid: 1505914887165444120
+      type: {class: SpeakerEntry, ns: jmayberry.TypewriterHelper.Entries, asm: jmayberry.TypewriterHelper}
+      data:
+        ID: 303378
+        Key: hero
+        Scope:
+          InternalID: 0
+        Triggers:
+          List: []
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        DisplayName: Hero
+    - rid: 1505914887165444130
+      type: {class: SpeakerEntry, ns: jmayberry.TypewriterHelper.Entries, asm: jmayberry.TypewriterHelper}
+      data:
+        ID: 303383
+        Key: demonLord
+        Scope:
+          InternalID: 3866876
+        Triggers:
+          List: []
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        DisplayName: Demon Lord
+    - rid: 1505914887165444140
+      type: {class: EventEntry, ns: Aarthificial.Typewriter.Entries, asm: Aarthificial.Typewriter}
+      data:
+        ID: 303387
+        Key: none
+        Scope:
+          InternalID: 0
+        Triggers:
+          List: []
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+    - rid: 1505914887165444141
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 303388
+        Key: none
+        Scope:
+          InternalID: 0
+        Triggers:
+          List: []
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 0
+        _speaker:
+          InternalID: 3866878
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - 
+        Speed: 1
+        portraitSide: 0
+    - rid: 3902770651565129728
+      type: {class: ScopeEntry, ns: Aarthificial.Typewriter.Entries, asm: Aarthificial.Typewriter}
+      data:
+        ID: 3866876
+        Key: global
+        Scope:
+          InternalID: 0
+        Triggers:
+          List: []
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+    - rid: 3902770651565129729
+      type: {class: ScopeEntry, ns: Aarthificial.Typewriter.Entries, asm: Aarthificial.Typewriter}
+      data:
+        ID: 3866877
+        Key: context
+        Scope:
+          InternalID: 0
+        Triggers:
+          List: []
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+    - rid: 3902770651565129730
+      type: {class: SpeakerEntry, ns: jmayberry.TypewriterHelper.Entries, asm: jmayberry.TypewriterHelper}
+      data:
+        ID: 3866878
+        Key: system
+        Scope:
+          InternalID: 3866876
+        Triggers:
+          List: []
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        DisplayName: System
+    - rid: 3902770651565129731
+      type: {class: SpeakerEntry, ns: jmayberry.TypewriterHelper.Entries, asm: jmayberry.TypewriterHelper}
+      data:
+        ID: 3866879
+        Key: player
+        Scope:
+          InternalID: 3866876
+        Triggers:
+          List: []
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        DisplayName: Player

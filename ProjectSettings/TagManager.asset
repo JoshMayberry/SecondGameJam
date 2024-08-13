@@ -10,6 +10,7 @@ TagManager:
   - Loot
   - GameBoundary
   - Hero
+  - VenueRecharging
   layers:
   - Default
   - TransparentFX

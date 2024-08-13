@@ -6,9 +6,9 @@ using System;
 
 [Serializable]
 public class HeroExpectation {
-	public float expValue; // How much this is valued
-	public float scorePositive; // How much a positive experience impacts things
-	public float scoreNegative;// How much a negative experience impacts things
+	[Tooltip("How much this is valued")] public float expValue;
+	[Tooltip("How much a positive experience impacts things")] public float scorePositive;
+	[Tooltip("How much a negative experience impacts things")] public float scoreNegative;
 }
 
 [CreateAssetMenu(fileName = "NewHero", menuName = "Dungeon/Hero")]
@@ -18,8 +18,7 @@ public class HeroData : ScriptableObject {
 	[Required] public HeroType type;
 	[Required] public float health = 5;
 	[Required] public float speed = 2;
-	[SerializeField] public int destinationMinimum = 3;
-	[SerializeField] public int destinationMaximum = 10;
-    [SerializedDictionary("Type", "Expectation")] public SerializedDictionary<HeroExpectationType, HeroExpectation> expectation;
-
+	[Required] public Sprite uiHead;
+	[SerializedDictionary("Type", "Expectation")] public SerializedDictionary<HeroExpectationType, HeroExpectation> expectation;
+	[SerializedDictionary("Type", "Tolerance")] public SerializedDictionary<HeroTiredReason, float> toleranceLimits;
 }

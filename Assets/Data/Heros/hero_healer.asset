@@ -17,8 +17,7 @@ MonoBehaviour:
   type: 1
   health: 5
   speed: 2
-  destinationMinimum: 3
-  destinationMaximum: 10
+  uiHead: {fileID: 5225174558424710699, guid: f6d8089d6c40c6941ae42f96869cfc6d, type: 3}
   expectation:
     _serializedList:
     - Key: 0
@@ -56,3 +55,5 @@ MonoBehaviour:
         expValue: 0
         scorePositive: 0
         scoreNegative: 0
+  toleranceLimits:
+    _serializedList: []

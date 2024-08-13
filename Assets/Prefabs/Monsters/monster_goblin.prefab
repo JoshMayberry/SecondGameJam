@@ -49,12 +49,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectSpotList:
   - {fileID: 8320212816870566113}
+  upgradeSpotList: []
+  upgradeSprites: []
+  spriteRenderer: {fileID: 8532798632202620297}
+  fallbackRechargeTime: 5
   card: {fileID: 0}
-  cardData: {fileID: 0}
+  cardData: {fileID: 11400000, guid: 9958e42832058d34b95d23ed2cfb3554, type: 2}
   isBlueprint: 1
   targetConnection: {fileID: 0}
   blueprintConnection: {fileID: 0}
   constructed: {fileID: 0}
+  blueprintBuildingMe: {fileID: 0}
 --- !u!58 &1656717208429942349
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -111,6 +116,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1733011323
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: a53b50708b5dbef4491d79e67f9fa590, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a1a93a22a316a344fb8cbfcd724fde8c, type: 2}
     - target: {fileID: 7878350319992209165, guid: a53b50708b5dbef4491d79e67f9fa590, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -159,6 +168,11 @@ PrefabInstance:
 --- !u!4 &2984329391442174560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: a53b50708b5dbef4491d79e67f9fa590, type: 3}
+  m_PrefabInstance: {fileID: 4917915515798904173}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8532798632202620297 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3626916397498700004, guid: a53b50708b5dbef4491d79e67f9fa590, type: 3}
   m_PrefabInstance: {fileID: 4917915515798904173}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7706742951849570286

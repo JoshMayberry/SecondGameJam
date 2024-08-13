@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using jmayberry.CardDeck;
+using jmayberry.CustomAttributes;
 using AYellowpaper.SerializedCollections;
-using System;
 
 public enum CardType {
 	NormalRoom,
@@ -28,7 +26,11 @@ public class RoomCardData : CardData<CardType, CardSideEffect> {
 	[SerializeField] public CardSideEffect effectType;
 	[SerializeField] public CardType cardType;
 	[SerializeField] public Buildable blueprint;
+	[Required] public Sprite uiHead;
 	[SerializedDictionary("Expectation", "Fills")] public SerializedDictionary<HeroExpectationType, HeroExpectation> roomProvides;
+	public float minTime; // How much time this takes to do (minimum) in seconds
+	public float maxTime; // How much time this takes to do (maximum) in seconds
+	public float rechargeTime; // How much time this takes to recharge (in seconds)
 
 	[Header("For Monsters")]
 	public float attackDamage = 1;

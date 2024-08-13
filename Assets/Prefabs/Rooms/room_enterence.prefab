@@ -394,8 +394,9 @@ MonoBehaviour:
   - {fileID: 8355972298256505603, guid: dd575a879c1ced14dbcaf63c82be1811, type: 3}
   - {fileID: 6917266131393450098, guid: dd575a879c1ced14dbcaf63c82be1811, type: 3}
   spriteRenderer: {fileID: 3449018642720446542}
+  fallbackRechargeTime: 5
   card: {fileID: 0}
-  cardData: {fileID: 0}
+  cardData: {fileID: 11400000, guid: 6bb613a1c23b8b64cadd28990e8fbe43, type: 2}
   isBlueprint: 1
   targetConnection: {fileID: 0}
   blueprintConnection: {fileID: 0}

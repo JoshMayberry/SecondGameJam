@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d0878fa1be1f546a2a65661326a877, type: 3}
+  m_Name: Debug
+  m_EditorClassIdentifier: 
+  TableName: Debug
+  Rules:
+  - rid: 3902770651565129734
+  - rid: 3902770651565129735
+  - rid: 3902770651565129736
+  - rid: 3902770651565129737
+  - rid: 3902770651565129738
+  Facts:
+  - rid: 3902770651565129732
+  Events:
+  - rid: 3902770651565129733
+  references:
+    version: 2
+    RefIds:
+    - rid: 3902770651565129732
+      type: {class: SpeakerEntry, ns: jmayberry.TypewriterHelper.Entries, asm: jmayberry.TypewriterHelper}
+      data:
+        ID: 3866880
+        Key: Skeleton Bob
+        Scope:
+          InternalID: 3866877
+        Triggers:
+          List: []
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        DisplayName: Bob the Skeleton
+    - rid: 3902770651565129733
+      type: {class: EventEntry, ns: Aarthificial.Typewriter.Entries, asm: Aarthificial.Typewriter}
+      data:
+        ID: 3866881
+        Key: OnDebug
+        Scope:
+          InternalID: 0
+        Triggers:
+          List: []
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+    - rid: 3902770651565129734
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3866882
+        Key: dialog_1
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 3866881
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 0
+        _speaker:
+          InternalID: 3866878
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+          Lorem Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          a convallis leo, id feugiat magna. Duis consequat ante libero, finibus
+          pulvinar arcu pharetra eleifend. Quisque blandit in quam id gravida.
+        - Nam mattis magna at tincidunt sodales. Mauris eleifend est ligula, sed
+          egestas risus rutrum ac. Curabitur tristique eget metus id elementum. Nulla
+          id egestas magna, at tristique tellus. Praesent porta, nisl ac ullamcorper
+          tempus, est turpis interdum justo, tincidunt tincidunt nunc dolor ultrices
+          arcu. Phasellus quis aliquam odio. Sed tempus risus ut accumsan facilisis.
+          Mauris eleifend malesuada ipsum eu pellentesque.
+        - Vestibulum euismod nibh sed elementum molestie. Nulla varius lectus vel
+          ex egestas condimentum. Duis porttitor sit amet quam rutrum facilisis.
+          Fusce molestie a diam eu gravida. Pellentesque quis mauris vitae enim auctor
+          sodales eu sed nulla.
+        Speed: 1
+        portraitSide: 0
+    - rid: 3902770651565129735
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3866883
+        Key: dialog_2
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 3866882
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 1
+        _speaker:
+          InternalID: 3866879
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - This one is happy.
+        Speed: 1
+        portraitSide: 0
+    - rid: 3902770651565129736
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3866884
+        Key: dialog_3
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 3866883
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 3
+        _speaker:
+          InternalID: 3866879
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - This one is sad.
+        - Still Sad...
+        Speed: 1
+        portraitSide: 0
+    - rid: 3902770651565129737
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3866885
+        Key: dialog_4
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 3866884
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 0
+        _speaker:
+          InternalID: 3866880
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - Now I am talking.
+        Speed: 1
+        portraitSide: 1
+    - rid: 3902770651565129738
+      type: {class: MyDialogEntry, ns: , asm: Assembly-CSharp}
+      data:
+        ID: 3866886
+        Key: dialog_5
+        Scope:
+          InternalID: 0
+        Triggers:
+          List:
+          - InternalID: 3866885
+        Once: 0
+        Padding: 0
+        Criteria: []
+        Modifications: []
+        OnApply: []
+        OnInvoke: []
+        priority: 0
+        chatKind: 0
+        emotion: 0
+        _speaker:
+          InternalID: 3866879
+        speakerVoiceOverride: {fileID: 0}
+        TextList:
+        - This is the end.
+        Speed: 1
+        portraitSide: 0

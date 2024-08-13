@@ -114,14 +114,14 @@ public class Room : Buildable {
 		return true;
 	}
 
-	private void OnTriggerEnter(Collider other) {
-		switch (other.tag) {
-			case "Hero":
-				Hero hero = other.GetComponent<Hero>();
-				if (hero != null) {
-					hero.EnteredRoom(this);
-				}
-				break;
-		}
-	}
+	//private void OnTriggerEnter(Collider other) {
+	//	switch (other.tag) {
+	//		case "Hero":
+	//			Hero hero = other.GetComponent<Hero>();
+	//			if (hero != null) {
+	//				hero.EnteredRoom(this);
+	//			}
+	//			break;
+	//	}
+	//}
 }
